@@ -608,7 +608,7 @@ Scraper.prototype.scrape = function(fields){
         if( field.$el.find('.acf-taxonomy-field[data-type="multi_select"]').length > 0 ){
 
             terms = _.pluck(
-                field.$el.find('.acf-taxonomy-field[data-type="multi_select"] input')
+                field.$el.find('.acf-taxonomy-field[data-type="multi_select"] select')
                     .select2('data')
                 , 'text'
             );
@@ -652,6 +652,7 @@ Scraper.prototype.scrape = function(fields){
 };
 
 module.exports = Scraper;
+
 },{"./../scraper-store.js":11}],16:[function(require,module,exports){
 var config = require( "./../config/config.js" );
 var scrapers = require( "./../scraper-store.js" );
