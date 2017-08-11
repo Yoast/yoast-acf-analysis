@@ -38,6 +38,16 @@ App.prototype.bindListeners = function(){
             fields.on('change', _self.maybeRefresh.bind(_self) );
             fields.on('change', replaceVars.updateReplaceVars.bind(_self, collect, _self.replaceVars));
 
+            // Do not ignore Wysiwyg fields for the purpose of Replace Vars.
+            jQuery('textarea[id^=wysiwyg-acf]').on('change', replaceVars.updateReplaceVars.bind(_self, collect, _self.replaceVars));
+            if (YoastSEO.wp._tinyMCEHelper) {
+                jQuery('textarea[id^=wysiwyg-acf]').each( function () {
+                    YoastSEO.wp._tinyMCEHelper.addEventHandler(this.id, [ 'input', 'change', 'cut', 'paste' ],
+                        replaceVars.updateReplaceVars.bind(_self, collect, _self.replaceVars));
+                });
+            }
+
+
             //Also refresh on media close as attachment data might have changed
             wp.media.frame.on('close', _self.maybeRefresh.bind(_self) );
         });
@@ -63,6 +73,7 @@ App.prototype.maybeRefresh = function(){
 };
 
 module.exports = App;
+
 },{"./collect/collect.js":6,"./config/config.js":7,"./helper.js":8,"./replacevars.js":10}],2:[function(require,module,exports){
 /* global _ */
 var cache = require( "./cache.js" );
@@ -220,11 +231,16 @@ Collect.prototype.getFieldData = function () {
 
     var used_types = _.uniq(_.pluck(field_data, 'type'));
 
+    if(config.debug) {
+        console.log('Used types:')
+        console.log(used_types);
+    }
+
     _.each(used_types, function(type){
         field_data = scraper_store.getScraper(type).scrape(field_data);
     });
 
-    return field_data
+    return field_data;
 };
 
 Collect.prototype.append = function(data){
@@ -244,16 +260,11 @@ Collect.prototype.append = function(data){
     });
 
     if(config.debug){
-
-        console.log('Used types:')
-        console.log(used_types);
-
         console.log('Field data:')
         console.table(field_data);
 
         console.log('Data:')
         console.log(data);
-
     }
 
     return data;
@@ -316,6 +327,8 @@ var config = require( "./config/config.js" );
 
 var ReplaceVar = YoastReplaceVarPlugin.ReplaceVar;
 
+var supportedTypes = ['email', 'text', 'textarea', 'url', 'wysiwyg'];
+
 var createReplaceVars = function (collect) {
     if (ReplaceVar === undefined) {
         if (config.debug) {
@@ -324,7 +337,7 @@ var createReplaceVars = function (collect) {
         return;
     }
 
-    fieldData   = collect.getFieldData();
+    fieldData   = _.filter(collect.getFieldData(), function (field) { return _.contains(supportedTypes, field.type) });
     replaceVars = {}
 
     _.each(fieldData, function(field) {
@@ -333,7 +346,9 @@ var createReplaceVars = function (collect) {
 
         replaceVars[field.name] = new ReplaceVar( '%%cf_'+field.name+'%%', content, { source: 'direct' } );
         YoastSEO.wp.replaceVarsPlugin.addReplacement( replaceVars[field.name] );
-        console.log("Created ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
+        if (config.debug) {
+            console.log("Created ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
+        }
     });
 
     return replaceVars;
@@ -347,13 +362,15 @@ var updateReplaceVars = function (collect, replace_vars) {
         return;
     }
 
-    fieldData   = collect.getFieldData();
+    fieldData = _.filter(collect.getFieldData(), function (field) { return _.contains(supportedTypes, field.type) });
     _.each(fieldData, function(field) {
         // Remove HTML tags using jQuery in case of a wysiwyg field.
         var content = (field.type === 'wysiwyg') ? jQuery(jQuery.parseHTML(field.content)).text() : field.content;
 
         replaceVars[field.name].replacement = content;
-        console.log("Updated ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
+        if (config.debug) {
+            console.log("Updated ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
+        }
     });
 };
 
@@ -361,6 +378,7 @@ module.exports = {
     createReplaceVars: createReplaceVars,
     updateReplaceVars: updateReplaceVars
 };
+
 },{"./config/config.js":7}],11:[function(require,module,exports){
 /* global _ */
 var config = require( "./config/config.js" );
