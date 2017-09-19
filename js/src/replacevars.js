@@ -6,52 +6,51 @@ var ReplaceVar = YoastReplaceVarPlugin.ReplaceVar;
 
 var supportedTypes = ['email', 'text', 'textarea', 'url', 'wysiwyg'];
 
-var createReplaceVars = function (collect) {
+var replaceVars = {};
+
+var replaceVarPluginAvailable = function(){
     if (ReplaceVar === undefined) {
         if (config.debug) {
-            console.log('Replacing ACF variables in the Snippet Window requires the latest version of wordpress-seo.');
+            console.log('Replacing ACF variables in the Snippet Window requires Yoast SEO >= 5.3.');
         }
-        return;
+        return false;
     }
-
-    fieldData   = _.filter(collect.getFieldData(), function (field) { return _.contains(supportedTypes, field.type) });
-    replaceVars = {}
-
-    _.each(fieldData, function(field) {
-        // Remove HTML tags using jQuery in case of a wysiwyg field.
-        var content = (field.type === 'wysiwyg') ? jQuery( jQuery.parseHTML( field.content) ).text() : field.content;
-
-        replaceVars[field.name] = new ReplaceVar( '%%cf_'+field.name+'%%', content, { source: 'direct' } );
-        YoastSEO.wp.replaceVarsPlugin.addReplacement( replaceVars[field.name] );
-        if (config.debug) {
-            console.log("Created ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
-        }
-    });
-
-    return replaceVars;
+    return true;
 };
 
-var updateReplaceVars = function (collect, replace_vars) {
-    if (ReplaceVar === undefined) {
-        if (config.debug) {
-            console.log('Replacing ACF variables in the Snippet Window requires the latest version of wordpress-seo.');
-        }
+var updateReplaceVars = function (collect) {
+    if (!replaceVarPluginAvailable()) {
         return;
     }
 
-    fieldData = _.filter(collect.getFieldData(), function (field) { return _.contains(supportedTypes, field.type) });
+    var fieldData = _.filter(collect.getFieldData(), function (field) { return _.contains(supportedTypes, field.type) });
+
     _.each(fieldData, function(field) {
         // Remove HTML tags using jQuery in case of a wysiwyg field.
         var content = (field.type === 'wysiwyg') ? jQuery(jQuery.parseHTML(field.content)).text() : field.content;
 
-        replaceVars[field.name].replacement = content;
-        if (config.debug) {
-            console.log("Updated ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
+        if(replaceVars[field.name]===undefined){
+
+            replaceVars[field.name] = new ReplaceVar( '%%cf_'+field.name+'%%', content, { source: 'direct' } );
+            YoastSEO.wp.replaceVarsPlugin.addReplacement( replaceVars[field.name] );
+
+            if (config.debug) {
+                console.log("Created ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
+            }
+
+        }else{
+
+            replaceVars[field.name].replacement = content;
+
+            if (config.debug) {
+                console.log("Updated ReplaceVar for: ", field.name, " with: ", content, replaceVars[field.name]);
+            }
+
         }
+
     });
 };
 
 module.exports = {
-    createReplaceVars: createReplaceVars,
     updateReplaceVars: updateReplaceVars
 };
