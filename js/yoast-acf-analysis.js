@@ -408,7 +408,7 @@ var updateReplaceVars = function (collect) {
         // Remove HTML tags using jQuery in case of a wysiwyg field.
         var content = (field.type === 'wysiwyg') ? jQuery(jQuery.parseHTML(field.content)).text() : field.content;
 
-        if(replaceVars[field.name]==undefined){
+        if(replaceVars[field.name]===undefined){
 
             replaceVars[field.name] = new ReplaceVar( '%%cf_'+field.name+'%%', content, { source: 'direct' } );
             YoastSEO.wp.replaceVarsPlugin.addReplacement( replaceVars[field.name] );
