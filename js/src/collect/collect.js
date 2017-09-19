@@ -15,7 +15,7 @@ Collect.prototype.getFieldData = function () {
 
     if(config.debug) {
 
-        console.log('Used types:')
+        console.log('Used types:');
         console.log(used_types);
 
     }
@@ -44,10 +44,10 @@ Collect.prototype.append = function(data){
     });
 
     if(config.debug){
-        console.log('Field data:')
+        console.log('Field data:');
         console.table(field_data);
 
-        console.log('Data:')
+        console.log('Data:');
         console.log(data);
     }
 
