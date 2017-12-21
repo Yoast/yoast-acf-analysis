@@ -29,8 +29,12 @@ module.exports = {
                 this.click('@submitButton');
                 return this.waitForElementVisible('#adminmenu #menu-dashboard .current', 15000);
             },
-            newPost: function(){
-                this.api.url( this.api.launchUrl + '/wp/wp-admin/post-new.php' );
+            newPost: function(cpt){
+                if(cpt  !== undefined){
+                    cpt = '?post_type=' + cpt;
+                }
+                cpt = cpt || '';
+                this.api.url( this.api.launchUrl + '/wp/wp-admin/post-new.php' + cpt );
                 this.waitForElementVisible('body.post-new-php', 15000);
 
                 return this.api.execute(function() {

@@ -21,4 +21,13 @@ function yoast_acf_analysis_test_data_loader() {
 
 	require_once AC_SEO_ACF_ANALYSIS_PLUGIN_PATH . '/tests/js/system/data/acf' . $version . '.php';
 
+	$args = array(
+		'public' => false,
+		'show_ui' => true,
+		'supports' => array( 'thumbnail' ),
+		'label'  => 'Non Public CPT',
+	);
+
+	register_post_type( 'test_non_public_cpt', $args );
+
 }

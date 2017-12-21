@@ -100,4 +100,42 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+
+	register_field_group(array (
+		'id' => 'acf_non-public-cpt',
+		'title' => 'Non Public CPT',
+		'fields' => array (
+			array (
+				'key' => 'field_59e897a8755dc',
+				'label' => 'Text',
+				'name' => 'yoast_acf_analysis_text',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'test_non_public_cpt',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+
 }
