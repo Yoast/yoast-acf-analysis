@@ -570,7 +570,7 @@ Scraper.prototype.scrape = function( fields ) {
 			var attachment_id = jQuery( this ).val();
 
 			// Skip if attachment id is empty
-			if( attachment_id === '' || typeof attachment_id === 'undefined' ){
+			if ( attachment_id === "" || typeof attachment_id === "undefined" ) {
 				return;
 			}
 
@@ -615,7 +615,7 @@ Scraper.prototype.scrape = function( fields ) {
 		var attachment_id = field.$el.find( "input[type=hidden]" ).val();
 
 		// Skip if attachment id is empty
-		if( attachment_id === '' || typeof attachment_id === 'undefined' ){
+		if ( attachment_id === "" || typeof attachment_id === "undefined" ) {
 			return field;
 		}
 
