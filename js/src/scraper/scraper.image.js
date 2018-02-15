@@ -16,11 +16,6 @@ Scraper.prototype.scrape = function( fields ) {
 
 		var attachment_id = field.$el.find( "input[type=hidden]" ).val();
 
-		// Skip if attachment id is empty
-		if ( attachment_id === "" || typeof attachment_id === "undefined" ) {
-			return field;
-		}
-
 		attachment_ids.push( attachment_id );
 
 		if ( attachmentCache.get( attachment_id, "attachment" ) ) {

@@ -92,7 +92,12 @@ module.exports = App;
 var cache = require( "./cache.js" );
 
 var refresh = function( attachment_ids ) {
-	var uncached = cache.getUncached( attachment_ids, "attachment" );
+
+	attachment_ids = attachment_ids.filter( function (id) {
+		return id !== "" && typeof id !== "undefined"
+  });
+
+  var uncached = cache.getUncached( attachment_ids, "attachment" );
 
 	if ( uncached.length === 0 ) {
 		return;
@@ -569,11 +574,6 @@ Scraper.prototype.scrape = function( fields ) {
 			// TODO: Is this the best way to get the attachment id?
 			var attachment_id = jQuery( this ).val();
 
-			// Skip if attachment id is empty
-			if ( attachment_id === "" || typeof attachment_id === "undefined" ) {
-				return;
-			}
-
 			// Collect all attachment ids for cache refresh
 			attachment_ids.push( attachment_id );
 
@@ -613,11 +613,6 @@ Scraper.prototype.scrape = function( fields ) {
 		field.content = "";
 
 		var attachment_id = field.$el.find( "input[type=hidden]" ).val();
-
-		// Skip if attachment id is empty
-		if ( attachment_id === "" || typeof attachment_id === "undefined" ) {
-			return field;
-		}
 
 		attachment_ids.push( attachment_id );
 

@@ -18,11 +18,6 @@ Scraper.prototype.scrape = function( fields ) {
 			// TODO: Is this the best way to get the attachment id?
 			var attachment_id = jQuery( this ).val();
 
-			// Skip if attachment id is empty
-			if ( attachment_id === "" || typeof attachment_id === "undefined" ) {
-				return;
-			}
-
 			// Collect all attachment ids for cache refresh
 			attachment_ids.push( attachment_id );
 
