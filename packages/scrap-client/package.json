@@ -1,0 +1,44 @@
+{
+  "name": "scrap-client",
+  "version": "1.0.0",
+  "description": "Scrap client",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "4.7.0",
+    "normalize.css": "8.0.0",
+    "plow-js": "2.1.0",
+    "prop-types": "15.6.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-redux": "5.0.6",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "3.7.2",
+    "redux-actions": "2.2.1",
+    "socket.io-client": "2.0.4"
+  },
+  "devDependencies": {
+    "classcat": "3.0.1",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "pwmetrics": "3.1.4",
+    "react-test-renderer": "16.2.0",
+    "rimraf": "2.6.2",
+    "standard": "11.0.0",
+    "stylelint": "8.4.0",
+    "stylelint-config-standard": "18.1.0"
+  },
+  "homepage": "http://localhost:8000/",
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --coverage && jest lib",
+    "lint": "standard && stylelint src/**/*.css",
+    "clean": "rimraf node_modules coverage build"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}

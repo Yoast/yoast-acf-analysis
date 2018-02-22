@@ -1,0 +1,48 @@
+{
+  "name": "scrap-server",
+  "version": "1.0.0",
+  "description": "Scrap server",
+  "private": true,
+  "dependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "body-parser": "1.18.2",
+    "compression": "1.7.2",
+    "cors": "2.8.4",
+    "debug": "3.1.0",
+    "express": "4.16.2",
+    "express-status-monitor": "1.0.1",
+    "helmet": "3.11.0",
+    "immutable": "3.8.2",
+    "plow-js": "2.1.0",
+    "redux": "3.7.2",
+    "redux-actions": "2.2.1",
+    "redux-subscriber": "1.1.0",
+    "socket.io": "2.0.4"
+  },
+  "devDependencies": {
+    "jest": "22.4.0",
+    "nodemon": "1.15.1",
+    "pwmetrics": "3.1.4",
+    "rimraf": "2.6.2",
+    "standard": "11.0.0"
+  },
+  "scripts": {
+    "start": "babel-node src/server",
+    "dev": "nodemon src/server --exec babel-node",
+    "test": "jest --coverage",
+    "perftest": "pwmetrics --config pwmetrics.json",
+    "lint": "standard",
+    "clean": "rimraf node_modules coverage"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "testMatch": [
+      "**/*[-sS]pec.js"
+    ]
+  }
+}
