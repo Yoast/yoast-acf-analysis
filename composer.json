@@ -49,7 +49,7 @@
   },
   "require-dev": {
     "brain/monkey": "^2.4.0",
-    "phpunit/phpunit": "^5.4 || ^6.0 || ^7.0",
+    "phpunit/phpunit": "^8.0.0",
     "yoast/yoastcs": "^2.0.0"
   },
   "autoload": {
