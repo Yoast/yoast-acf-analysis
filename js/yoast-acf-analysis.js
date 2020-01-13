@@ -470,6 +470,7 @@ var scraperObjects = {
 	// TODO: select, checkbox, radio
 
 	// Relational
+	page_link: require( "./scraper/scraper.page_link.js" ),
 	taxonomy: require( "./scraper/scraper.taxonomy.js" ),
 
 	// Third-party / jQuery
@@ -545,7 +546,7 @@ module.exports = {
 	getScraper: getScraper,
 };
 
-},{"./config/config.js":7,"./scraper/scraper.email.js":12,"./scraper/scraper.gallery.js":13,"./scraper/scraper.image.js":14,"./scraper/scraper.link.js":15,"./scraper/scraper.taxonomy.js":16,"./scraper/scraper.text.js":17,"./scraper/scraper.textarea.js":18,"./scraper/scraper.url.js":19,"./scraper/scraper.wysiwyg.js":20}],12:[function(require,module,exports){
+},{"./config/config.js":7,"./scraper/scraper.email.js":12,"./scraper/scraper.gallery.js":13,"./scraper/scraper.image.js":14,"./scraper/scraper.link.js":15,"./scraper/scraper.page_link.js":16,"./scraper/scraper.taxonomy.js":17,"./scraper/scraper.text.js":18,"./scraper/scraper.textarea.js":19,"./scraper/scraper.url.js":20,"./scraper/scraper.wysiwyg.js":21}],12:[function(require,module,exports){
 /* global _ */
 
 var Scraper = function() {};
@@ -682,6 +683,43 @@ Scraper.prototype.scrape = function( fields ) {
 module.exports = Scraper;
 
 },{"./../scraper-store.js":11}],16:[function(require,module,exports){
+/* global _ */
+require( "../scraper-store.js" );
+
+var Scraper = function() {};
+
+/**
+ * Scraper for the page link field type.
+ *
+ * @param {Object} fields Fields to parse.
+ *
+ * @returns {Object} Mapped list of fields.
+ */
+Scraper.prototype.scrape = function( fields ) {
+	/**
+	 * Set content for all page link fields as a-tag with title, url and target.
+	 * Return the fields object containing all fields.
+	 */
+	return _.map( fields, function( field ) {
+		if ( field.type !== "page_link" ) {
+			return field;
+		}
+
+		var title = field.$el.find( "select option:selected" ).text(),
+			url = field.$el.find( "input[type=hidden].input-url" ).val(),
+			target = field.$el.find( "input[type=hidden].input-target" ).val();
+
+		console.log(title, url, target)
+
+		field.content = "<a href=\"" + url + "\" target=\"" + target + "\">" + title + "</a>";
+
+		return field;
+	} );
+};
+
+module.exports = Scraper;
+
+},{"../scraper-store.js":11}],17:[function(require,module,exports){
 /* global _, acf */
 
 var Scraper = function() {};
@@ -737,7 +775,7 @@ Scraper.prototype.scrape = function( fields ) {
 
 module.exports = Scraper;
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /* global _ */
 
 var config = require( "./../config/config.js" );
@@ -792,7 +830,7 @@ Scraper.prototype.isHeadline = function( field ) {
 
 module.exports = Scraper;
 
-},{"./../config/config.js":7}],18:[function(require,module,exports){
+},{"./../config/config.js":7}],19:[function(require,module,exports){
 /* global _ */
 
 var Scraper = function() {};
@@ -813,7 +851,7 @@ Scraper.prototype.scrape = function( fields ) {
 
 module.exports = Scraper;
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /* global _ */
 
 var Scraper = function() {};
@@ -836,7 +874,7 @@ Scraper.prototype.scrape = function( fields ) {
 
 module.exports = Scraper;
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /* global tinyMCE, _ */
 
 var Scraper = function() {};

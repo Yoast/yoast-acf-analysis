@@ -18,6 +18,7 @@ var scraperObjects = {
 	// TODO: select, checkbox, radio
 
 	// Relational
+	page_link: require( "./scraper/scraper.page_link.js" ),
 	taxonomy: require( "./scraper/scraper.taxonomy.js" ),
 
 	// Third-party / jQuery
