@@ -23,7 +23,9 @@ Scraper.prototype.scrape = function( fields ) {
 		var title = field.$el.find( "select option:selected" ).text(),
 			postId = field.$el.find("select option:selected").val()
 
-		field.content = "<a href=\"/?p=" + url + "\">" + title + "</a>";
+		if (title && postId) {
+			field.content = "<a href=\"/?p=" + url + "\">" + title + "</a>";
+		}
 
 		return field;
 	} );
