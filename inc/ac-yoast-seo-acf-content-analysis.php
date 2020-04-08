@@ -229,7 +229,6 @@ class AC_Yoast_SEO_ACF_Content_Analysis {
 			'true_false',
 
 			'post_object',
-			'page_link',
 			'relationship',
 			'user',
 
