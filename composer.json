@@ -49,7 +49,7 @@
   },
   "require-dev": {
     "brain/monkey": "^2.4.0",
-    "phpunit/phpunit": "^5.4 || ^6.0 || ^7.0",
+    "phpunit/phpunit": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0",
     "yoast/yoastcs": "^2.0.0",
     "php-parallel-lint/php-parallel-lint": "^1.2",
     "php-parallel-lint/php-console-highlighter": "^0.5"
