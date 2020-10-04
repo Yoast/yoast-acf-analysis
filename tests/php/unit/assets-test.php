@@ -31,9 +31,11 @@ class Assets_Test extends TestCase {
 	/**
 	 * Sets up test fixtures.
 	 *
+	 * @before
+	 *
 	 * @return void
 	 */
-	protected function setUp() {
+	protected function setUpFixtures() {
 		parent::setUp();
 		Monkey\setUp();
 	}
@@ -41,9 +43,11 @@ class Assets_Test extends TestCase {
 	/**
 	 * Tears down test fixtures previously setup.
 	 *
+	 * @after
+	 *
 	 * @return void
 	 */
-	protected function tearDown() {
+	protected function tearDownFixtures() {
 		Monkey\tearDown();
 		parent::tearDown();
 	}
