@@ -29,6 +29,7 @@ jobs:
     - php: 7.0
       env: PHPUNIT=1
     - php: "nightly"
+      env: PHPUNIT=1
 
   allow_failures:
     # Allow failures for unstable builds.
@@ -43,9 +44,11 @@ before_install:
 install:
 - |
   if [[ $TRAVIS_PHP_VERSION == "nightly" ]]; then
-    composer install --prefer-dist --no-interaction --ignore-platform-reqs
+    travis_retry composer config platform --unset
+    # Update the locked-in PHPUnit version to allow for testing on PHP 8.
+    travis_retry composer require --dev phpunit/phpunit:"^9.0" --update-with-dependencies --no-interaction --ignore-platform-reqs
   else
-    composer install --prefer-dist --no-interaction
+    travis_retry composer install --no-interaction
   fi
 - if [[ "$CHECKJS" == "1" ]]; then yarn global add grunt-cli; fi
 - if [[ "$CHECKJS" == "1" ]]; then yarn install; fi
