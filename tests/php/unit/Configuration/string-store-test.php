@@ -30,7 +30,7 @@ class String_Store_Test extends TestCase {
 		$store  = $this->getStore();
 		$result = $store->to_array();
 
-		$this->assertInternalType( 'array', $result );
+		$this->assertTypeArray( $result );
 		$this->assertEmpty( $result );
 	}
 
@@ -112,7 +112,7 @@ class String_Store_Test extends TestCase {
 
 		$result = $store->to_array();
 
-		$this->assertInternalType( 'array', $result );
+		$this->assertTypeArray( $result );
 		$this->assertEmpty( $result );
 	}
 
@@ -141,7 +141,7 @@ class String_Store_Test extends TestCase {
 
 		$result = $store->to_array();
 
-		$this->assertInternalType( 'array', $result );
+		$this->assertTypeArray( $result );
 		$this->assertEmpty( $result );
 	}
 
@@ -168,5 +168,28 @@ class String_Store_Test extends TestCase {
 		$store = $this->getStore();
 
 		$this->assertFalse( $store->remove( 'test' ) );
+	}
+
+	/**
+	 * Helper method to test that an arbitrary result is of the type array.
+	 *
+	 * PHPUnit 7.5 introduced a new set of methods to test the type of a variable.
+	 * As of PHPUnit 8.0, the old `assert[Not]InternalType()` methods was deprecated
+	 * and they were removed in PHPUnit 9.0.
+	 * This is a simple wrapper to get round this for the limited functionality used
+	 * by this test.
+	 *
+	 * @param mixed $result The result to check the type of.
+	 *
+	 * @return void.
+	 */
+	protected function assertTypeArray( $result ) {
+		if ( method_exists( $this, 'assertIsArray' ) ) {
+			// PHPUnit 7.5+.
+			$this->assertIsArray( $result );
+			return;
+		}
+
+		$this->assertInternalType( 'array', $result );
 	}
 }
