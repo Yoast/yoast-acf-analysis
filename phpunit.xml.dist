@@ -7,6 +7,10 @@
 		beStrictAboutTestsThatDoNotTestAnything="true"
 		beStrictAboutTodoAnnotatedTests="true"
 		bootstrap="vendor/autoload.php"
+		convertErrorsToExceptions="true"
+		convertWarningsToExceptions="true"
+		convertNoticesToExceptions="true"
+		convertDeprecationsToExceptions="true"
 		forceCoversAnnotation="true"
 		verbose="true"
 	>
