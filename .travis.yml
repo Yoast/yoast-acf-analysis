@@ -30,11 +30,6 @@ jobs:
       env: PHPUNIT=1
     - php: 8.0
       env: PHPUNIT=1
-    - php: "nightly"
-
-  allow_failures:
-    # Allow failures for unstable builds.
-    - php: "nightly"
 
 before_install:
 - export SECURITYCHECK_DIR=/tmp/security-checker
