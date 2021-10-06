@@ -5,7 +5,6 @@ language: php
 cache:
   yarn: true
   directories:
-    - .cache
     - vendor
     # Cache directory for older Composer versions.
     - $HOME/.composer/cache/files
@@ -23,7 +22,7 @@ jobs:
   fast_finish: true
   include:
     - php: 7.4
-      env: PHPCS=1 CHECKJS=1 PHPUNIT=1 SECURITY=1 TRAVIS_NODE_VERSION=node
+      env: CHECKJS=1 PHPUNIT=1 SECURITY=1 TRAVIS_NODE_VERSION=node
     - php: 5.6
       env: PHPUNIT=1
     - php: 7.0
@@ -50,9 +49,7 @@ install:
 
 script:
 - composer lint
-- if [[ "$PHPCS" == "1" ]]; then composer check-cs; fi
 - if [[ "$CHECKJS" == "1" ]]; then grunt check; fi
 - if [[ "$PHPUNIT" == "1" ]]; then composer test; fi
-- if [[ $TRAVIS_PHP_VERSION == "5.6" || $TRAVIS_PHP_VERSION == "7.4" ]]; then composer validate --no-check-all; fi
 # Check for known security vulnerabilities in the currently locked-in dependencies.
 - if [[ "$SECURITY" == "1" ]]; then $SECURITYCHECK_DIR/local-php-security-checker_1.2.0_linux_amd64 --path=$(pwd)/composer.lock;fi
