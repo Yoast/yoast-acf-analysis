@@ -46,6 +46,5 @@ install:
 - if [[ "$CHECKJS" == "1" ]]; then yarn install; fi
 
 script:
-- composer lint
 - if [[ "$CHECKJS" == "1" ]]; then grunt check; fi
 - if [[ "$PHPUNIT" == "1" ]]; then composer test; fi

@@ -1,0 +1,54 @@
+name: Lint
+
+on:
+  # Run on pushes to select branches and on all pull requests.
+  push:
+    branches:
+      - master
+      - develop
+      - 'release/[0-9]+.[0-9]+*'
+      - 'hotfix/[0-9]+.[0-9]+*'
+  pull_request:
+  # Allow manually triggering the workflow.
+  workflow_dispatch:
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # Lint against the highest/lowest supported versions of each PHP major.
+        # And also do a run against "nightly" (the current dev version of PHP).
+        php_version: ['5.6', '7.0', '7.4', '8.0', '8.1', '8.2']
+
+    name: "Lint: PHP ${{ matrix.php_version }}"
+
+    # Allow builds to fail on as-of-yet unreleased PHP versions.
+    continue-on-error: ${{ matrix.php_version == '8.1' || matrix.php_version == '8.2' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php_version }}
+          ini-values: zend.assertions=1, error_reporting=-1, display_errors=On
+          coverage: none
+          tools: cs2pr
+
+      # Install dependencies and handle caching in one go.
+      # @link https://github.com/marketplace/actions/install-composer-dependencies
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v1
+
+      - name: Lint against parse errors
+        run: composer lint -- --checkstyle | cs2pr
