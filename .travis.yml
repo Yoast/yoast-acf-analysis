@@ -3,7 +3,6 @@ dist: xenial
 language: php
 
 cache:
-  yarn: true
   directories:
     - vendor
     # Cache directory for older Composer versions.
@@ -22,18 +21,13 @@ jobs:
   fast_finish: true
   include:
     - php: 7.4
-      env: CHECKJS=1 PHPUNIT=1 TRAVIS_NODE_VERSION=node
+      env: PHPUNIT=1
     - php: 5.6
       env: PHPUNIT=1
     - php: 7.0
       env: PHPUNIT=1
     - php: 8.0
       env: PHPUNIT=1
-
-before_install:
-- if [[ "$CHECKJS" == "1" ]]; then nvm install $TRAVIS_NODE_VERSION; fi
-- if [[ "$CHECKJS" == "1" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash; fi
-- if [[ "$CHECKJS" == "1" ]]; then export PATH=$HOME/.yarn/bin:$PATH; fi
 
 install:
 - |
@@ -42,9 +36,6 @@ install:
   else
     travis_retry composer install --no-interaction
   fi
-- if [[ "$CHECKJS" == "1" ]]; then yarn global add grunt-cli; fi
-- if [[ "$CHECKJS" == "1" ]]; then yarn install; fi
 
 script:
-- if [[ "$CHECKJS" == "1" ]]; then grunt check; fi
 - if [[ "$PHPUNIT" == "1" ]]; then composer test; fi
