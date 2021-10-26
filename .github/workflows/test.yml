@@ -26,7 +26,7 @@ jobs:
       matrix:
         php_version: ['5.6', '7.0', '7.4', '8.0', '8.1']
 
-    name: "Test: PHP ${{ matrix.php_version }}"
+    name: "Unit Test: PHP ${{ matrix.php_version }}"
 
     # Allow builds to fail on as-of-yet unreleased PHP versions.
     continue-on-error: ${{ matrix.php_version == '8.1' }}
