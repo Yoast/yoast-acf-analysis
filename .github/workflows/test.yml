@@ -43,11 +43,11 @@ jobs:
       # @link https://github.com/marketplace/actions/install-composer-dependencies
       - name: Install Composer dependencies (PHP < 7.3)
         if: ${{ matrix.php_version < '7.3' }}
-        uses: ramsey/composer-install@v1
+        uses: ramsey/composer-install@v2
 
       - name: Install Composer dependencies (PHP 7.3+)
         if: ${{ matrix.php_version >= '7.3' }}
-        uses: ramsey/composer-install@v1
+        uses: ramsey/composer-install@v2
         with:
           # Force a `composer update` run.
           dependency-versions: "highest"
