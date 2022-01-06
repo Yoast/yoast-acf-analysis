@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v2
 
       # The ubuntu images come with Node, npm and yarn pre-installed.
-      # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md
+      # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md
 
       # This action also handles the caching of the Yarn dependencies.
       # https://github.com/actions/setup-node
