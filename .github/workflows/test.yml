@@ -26,10 +26,7 @@ jobs:
       matrix:
         php_version: ['5.6', '7.0', '7.4', '8.0', '8.1']
 
-    name: "Test: PHP ${{ matrix.php_version }}"
-
-    # Allow builds to fail on as-of-yet unreleased PHP versions.
-    continue-on-error: ${{ matrix.php_version == '8.1' }}
+    name: "Unit Test: PHP ${{ matrix.php_version }}"
 
     steps:
       - name: Checkout code
@@ -46,11 +43,11 @@ jobs:
       # @link https://github.com/marketplace/actions/install-composer-dependencies
       - name: Install Composer dependencies (PHP < 7.3)
         if: ${{ matrix.php_version < '7.3' }}
-        uses: ramsey/composer-install@v1
+        uses: ramsey/composer-install@v2
 
       - name: Install Composer dependencies (PHP 7.3+)
         if: ${{ matrix.php_version >= '7.3' }}
-        uses: ramsey/composer-install@v1
+        uses: ramsey/composer-install@v2
         with:
           # Force a `composer update` run.
           dependency-versions: "highest"
