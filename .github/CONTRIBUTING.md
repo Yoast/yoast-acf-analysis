@@ -36,7 +36,7 @@ When contributing please ensure you follow the guidelines below so that we can k
 Make sure your problem does not exist as a ticket already by searching through [the existing issues](https://github.com/Yoast/yoast-acf-analysis/issues). If you cannot find anything which resembles your problem, please [create a new issue](https://github.com/Yoast/yoast-acf-analysis/issues/new).
 
 #### Fixing an issue
-* Fork the repository on GitHub (make sure to use the `develop` branch, not `master`).
+* Fork the repository on GitHub (make sure to use the `develop` branch, not `main`).
 * Make the changes to your forked repository.
 * Ensure you stick to the [WordPress Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/) and you properly document any new functions, actions and filters following the [documentation standards](http://make.wordpress.org/core/handbook/inline-documentation-standards/php-documentation-standards/).
 * When committing, reference your issue and include a note about the fix.
