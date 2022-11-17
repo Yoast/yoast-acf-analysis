@@ -49,7 +49,7 @@
   },
   "require-dev": {
     "yoast/yoastcs": "^2.2.1",
-    "yoast/wp-test-utils": "^1.0.0"
+    "yoast/wp-test-utils": "^1.1.0"
   },
   "autoload": {
     "classmap": [ "inc" ]
