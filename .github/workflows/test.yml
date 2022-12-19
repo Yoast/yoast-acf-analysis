@@ -44,14 +44,14 @@ jobs:
 
     strategy:
       matrix:
-        php_version: ['7.4', '8.0', '8.1']
+        php_version: ['7.4', '8.0', '8.2']
         coverage: [false]
 
         # Run code coverage only on high/low PHP.
         include:
         - php_version: 7.2
           coverage: true
-        - php_version: 8.2
+        - php_version: 8.3
           coverage: true
 
     name: "Unit Test: PHP ${{ matrix.php_version }}"
