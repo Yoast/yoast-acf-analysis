@@ -48,7 +48,7 @@
     "composer/installers": "^1.12.0"
   },
   "require-dev": {
-    "yoast/yoastcs": "^2.2.1",
+    "yoast/yoastcs": "^2.3.0",
     "yoast/wp-test-utils": "^1.1.1"
   },
   "autoload": {
