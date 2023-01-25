@@ -1,4 +1,7 @@
 /* global _, acf, jQuery, wp */
+
+const isTinyMCEAvailable = require( "./tinymceHelpers" );
+
 module.exports = function() {
 	var outerFieldsName = [
 		"flexible_content",
@@ -10,13 +13,15 @@ module.exports = function() {
 	var outerFields = [];
 	var acfFields = [];
 
-	if ( wp.data.select( "core/block-editor" ) ) {
+	// Check whether classic editor is used.
+	if ( isTinyMCEAvailable( "content" ) ) {
+		acfFields = acf.get_fields();
+	} else {
+		// Assume Gutenberg is used.
 		// Return only fields in metabox areas (either below or side) or
 		// ACF block fields in the content (not in the sidebar, to prevent duplicates)
 		var parentContainer = jQuery( ".metabox-location-normal, .metabox-location-side, .acf-block-component.acf-block-body" );
 		acfFields = acf.get_fields( false, parentContainer );
-	} else {
-		acfFields = acf.get_fields();
 	}
 
 	var fields = _.map( acfFields, function( field ) {
