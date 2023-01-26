@@ -8,6 +8,9 @@ This was previously done by the [WordPress SEO ACF Content Analysis](https://wor
 
 This Plugin is compatible with the free ACF 4 Version as well as with the PRO Version 5. Please be aware that it ignores Pro Add-Ons for Version 4. In that case please upgrade to ACF PRO Version 5.
 
+> If you have issues, please [submit them on GitHub](https://github.com/Yoast/yoast-acf-analysis/issues)
+
+
 ## Installation
 
 Clone the repo into your plugins folder.
@@ -16,5 +19,3 @@ Run:
 * `composer install`
 * `yarn`
 * `yarn build`
-
-> If you have issues, please [submit them on GitHub](https://github.com/Yoast/yoast-acf-analysis/issues)
