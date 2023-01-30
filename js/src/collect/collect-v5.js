@@ -1,6 +1,4 @@
-/* global _, acf, jQuery, wp */
-
-const isTinyMCEAvailable = require( "./tinymceHelpers" );
+/* global _, acf, jQuery, wp, window */
 
 module.exports = function() {
 	var outerFieldsName = [
@@ -14,14 +12,14 @@ module.exports = function() {
 	var acfFields = [];
 
 	// Check whether classic editor is used.
-	if ( isTinyMCEAvailable( "content" ) ) {
-		acfFields = acf.get_fields();
+	if ( window.wpseoScriptData.isBlockEditor ) {
+		var parentContainer = jQuery( ".metabox-location-normal, .metabox-location-side, .acf-block-component.acf-block-body" );
+		acfFields = acf.get_fields( false, parentContainer );
 	} else {
 		// Assume Gutenberg is used.
 		// Return only fields in metabox areas (either below or side) or
 		// ACF block fields in the content (not in the sidebar, to prevent duplicates)
-		var parentContainer = jQuery( ".metabox-location-normal, .metabox-location-side, .acf-block-component.acf-block-body" );
-		acfFields = acf.get_fields( false, parentContainer );
+		acfFields = acf.get_fields();
 	}
 
 	var fields = _.map( acfFields, function( field ) {
