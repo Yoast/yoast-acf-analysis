@@ -11,7 +11,7 @@ This Plugin is compatible with the free ACF 4 Version as well as with the PRO Ve
 > If you have issues, please [submit them on GitHub](https://github.com/Yoast/yoast-acf-analysis/issues)
 
 
-## Installation
+## Development setup
 
 Clone the repo into your plugins folder.
 
