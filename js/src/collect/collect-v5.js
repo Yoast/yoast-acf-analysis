@@ -11,7 +11,7 @@ module.exports = function() {
 	var outerFields = [];
 	var acfFields = [];
 
-        // Check if Gutenberg editor is used.
+	// Check if Gutenberg editor is used.
 	if ( window.wpseoScriptData.isBlockEditor ) {
 	        /*
 	         * Return only fields in metabox areas (either below or side) or
