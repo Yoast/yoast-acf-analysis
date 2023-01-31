@@ -20,9 +20,6 @@ module.exports = function() {
 		var parentContainer = jQuery( ".metabox-location-normal, .metabox-location-side, .acf-block-component.acf-block-body" );
 		acfFields = acf.get_fields( false, parentContainer );
 	} else {
-		// Assume Gutenberg is used.
-		// Return only fields in metabox areas (either below or side) or
-		// ACF block fields in the content (not in the sidebar, to prevent duplicates)
 		acfFields = acf.get_fields();
 	}
 
