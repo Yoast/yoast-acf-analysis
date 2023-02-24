@@ -242,8 +242,8 @@ class AC_Yoast_SEO_ACF_Content_Analysis {
 			'flexible_content',
 			'group',
 
-			"url",
-			"email"
+			'url',
+			'email'
 		];
 
 		foreach ( $default_blacklist as $type ) {
