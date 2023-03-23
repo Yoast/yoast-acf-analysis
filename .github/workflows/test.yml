@@ -24,7 +24,7 @@ jobs:
 
     strategy:
       matrix:
-        php_version: ['5.6', '7.0', '7.4', '8.0', '8.1', '8.2']
+        php_version: ['7.2', '7.4', '8.0', '8.1', '8.2']
 
     name: "Unit Test: PHP ${{ matrix.php_version }}"
 
@@ -39,23 +39,21 @@ jobs:
           ini-values: zend.assertions=1, error_reporting=-1, display_errors=On
           coverage: none
 
-      # Install dependencies and handle caching in one go.
-      # @link https://github.com/marketplace/actions/install-composer-dependencies
-      - name: Install Composer dependencies (PHP < 7.3)
-        if: ${{ matrix.php_version < '7.3' }}
-        uses: ramsey/composer-install@v2
-        with:
-          # Bust the cache at least once a month - output format: YYYY-MM.
-          custom-cache-suffix: $(date -u "+%Y-%m")
+      # The PHP platform requirement would prevent updating the test utilities to the appropriate versions.
+      # As long as the `composer update` is run selectively to only update the test utils, removing this is fine.
+      - name: "Composer: remove the PHP platform requirement"
+        run: composer config --unset platform.php
 
-      - name: Install Composer dependencies (PHP 7.3+)
-        if: ${{ matrix.php_version >= '7.3' }}
+      # Install dependencies and handle caching in one go.
+      # - Updates the test utilities to the most appropriate version for the PHP version on which the tests will be run.
+      # @link https://github.com/marketplace/actions/install-composer-dependencies
+      - name: Install Composer dependencies
         uses: ramsey/composer-install@v2
         with:
           # Force a `composer update` run.
           dependency-versions: "highest"
           # But make it selective.
-          composer-options: "yoast/wp-test-utils --with-dependencies --ignore-platform-req=php"
+          composer-options: "yoast/wp-test-utils --with-dependencies"
           # Bust the cache at least once a month - output format: YYYY-MM.
           custom-cache-suffix: $(date -u "+%Y-%m")
 
