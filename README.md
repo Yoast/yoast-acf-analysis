@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/Yoast/yoast-acf-analysis/badge.svg?branch=develop)](https://coveralls.io/github/Yoast/yoast-acf-analysis?branch=develop)
+
 # ACF Content Analysis for Yoast SEO
 WordPress plugin that adds the content of all ACF fields to the Yoast SEO score analysis.
 
