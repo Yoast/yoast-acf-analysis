@@ -44,7 +44,7 @@ class Configuration_Test extends TestCase {
 			$configuration->to_array()
 		);
 
-		$this->assertSame( Filters\applied( 'acf/get_info' ), 1 );
+		$this->assertSame( 1, Filters\applied( 'acf/get_info' ) );
 	}
 
 	/**
@@ -159,7 +159,7 @@ class Configuration_Test extends TestCase {
 			->with( [] )
 			->andReturn( [] );
 
-		$this->assertSame( $configuration->get_blacklist_name(), $blacklist_name );
+		$this->assertSame( $blacklist_name, $configuration->get_blacklist_name() );
 
 
 		Filters\expectApplied( 'ysacf_exclude_fields' )
@@ -167,7 +167,7 @@ class Configuration_Test extends TestCase {
 			->with( [] )
 			->andReturn( [] );
 
-		$this->assertSame( $configuration->get_blacklist_name()->to_array(), [] );
+		$this->assertSame( [], $configuration->get_blacklist_name()->to_array() );
 
 
 		Filters\expectApplied( 'ysacf_exclude_fields' )
@@ -175,7 +175,7 @@ class Configuration_Test extends TestCase {
 			->with( [] )
 			->andReturn( [ 'some_field_name' ] );
 
-		$this->assertSame( $configuration->get_blacklist_name()->to_array(), [ 'some_field_name' ] );
+		$this->assertSame( [ 'some_field_name' ], $configuration->get_blacklist_name()->to_array() );
 	}
 
 	/**
@@ -198,14 +198,14 @@ class Configuration_Test extends TestCase {
 			->with( [] )
 			->andReturn( 'invalid' );
 
-		$this->assertSame( $configuration->get_blacklist_name(), $blacklist_name );
+		$this->assertSame( $blacklist_name, $configuration->get_blacklist_name() );
 
 		Filters\expectApplied( 'ysacf_exclude_fields' )
 			->once()
 			->with( [] )
 			->andReturn( 'invalid' );
 
-		$this->assertSame( $configuration->get_blacklist_name()->to_array(), [] );
+		$this->assertSame( [], $configuration->get_blacklist_name()->to_array() );
 	}
 
 	/**
