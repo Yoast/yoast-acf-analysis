@@ -55,6 +55,18 @@ Previously called Yoast ACF Analysis.
 
 == Changelog ==
 
+= 3.1 =
+
+Released May 9th, 2023
+
+Bugfixes:
+
+* Fixes a bug where the content in ACF fields was not included in the analysis in Classic editor when WordProof plugin was activated.
+
+Enhancements:
+
+* Improves the analysis by excluding content from the URL and email fields.
+
 = 3.0.1 =
 
 Released December 10th, 2020

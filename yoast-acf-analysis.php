@@ -8,7 +8,7 @@
  * Plugin Name: ACF Content Analysis for Yoast SEO
  * Plugin URI:  https://wordpress.org/plugins/acf-content-analysis-for-yoast-seo/
  * Description: Ensure that Yoast SEO analyzes all Advanced Custom Fields 5.7+ content including Flexible Content and Repeaters.
- * Version:     3.0.1
+ * Version:     3.1
  * Author:      Thomas Kräftner, ViktorFroberg, marol87, pekz0r, angrycreative, Team Yoast
  * Author URI:  https://yoa.st/team-yoast-acf
  * License:     GPL v3
