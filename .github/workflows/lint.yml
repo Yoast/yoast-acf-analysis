@@ -1,14 +1,24 @@
 name: Lint
 
 on:
-  # Run on pushes to select branches and on all pull requests.
+  # Run on relevant pushes to select branches and on all relevant pull requests.
   push:
     branches:
       - main
       - develop
       - 'release/[0-9]+.[0-9]+*'
       - 'hotfix/[0-9]+.[0-9]+*'
+    paths:
+      - '**.php'
+      - 'composer.json'
+      - 'composer.lock'
+      - '.github/workflows/lint.yml'
   pull_request:
+    paths:
+      - '**.php'
+      - 'composer.json'
+      - 'composer.lock'
+      - '.github/workflows/lint.yml'
   # Allow manually triggering the workflow.
   workflow_dispatch:
 

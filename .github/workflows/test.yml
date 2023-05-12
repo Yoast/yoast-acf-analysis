@@ -1,14 +1,34 @@
 name: Test
 
 on:
-  # Run on pushes to select branches and on all pull requests.
+  # Run on relevant pushes to select branches and on all relevant pull requests.
   push:
     branches:
       - main
       - develop
       - 'release/[0-9]+.[0-9]+*'
       - 'hotfix/[0-9]+.[0-9]+*'
+    paths:
+      - '**.php'
+      - '**.xsl'
+      - 'composer.json'
+      - 'composer.lock'
+      - 'phpunit.xml.dist'
+      - 'wpml-config.xml'
+      - '.github/workflows/test.yml'
+      - 'config/scripts/install-wp-tests.sh'
+      - 'tests/**'
   pull_request:
+    paths:
+      - '**.php'
+      - '**.xsl'
+      - 'composer.json'
+      - 'composer.lock'
+      - 'phpunit.xml.dist'
+      - 'wpml-config.xml'
+      - '.github/workflows/test.yml'
+      - 'config/scripts/install-wp-tests.sh'
+      - 'tests/**'
   # Allow manually triggering the workflow.
   workflow_dispatch:
 
