@@ -59,13 +59,20 @@ Previously called Yoast ACF Analysis.
 
 Released May 23rd, 2023
 
+Enhancements:
+
+* Improves the analysis by excluding content from the URL and email fields.
+
 Bugfixes:
 
 * Fixes a bug where the content in ACF fields was not included in the analysis in Classic editor when WordProof plugin was activated.
 
-Enhancements:
+Other:
 
-* Improves the analysis by excluding content from the URL and email fields.
+* Sets the minimum required Yoast SEO version to 20.8.
+* Sets the minimum required ACF version to 6.0.0.
+* Sets the minimum supported WordPress version to 6.1 and "Tested up to" to 6.2.
+* Drops compatibility with PHP 5.6, 7.0 and 7.1.
 
 = 3.0.1 =
 
