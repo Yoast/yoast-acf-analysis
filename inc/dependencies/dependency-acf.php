@@ -10,6 +10,8 @@
  */
 final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Dependency {
 
+	const MINIMAL_REQUIRED_ACF_VERSION = '6.0.0';
+
 	/**
 	 * Checks if ACF is active.
 	 *
@@ -20,7 +22,7 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 			return false;
 		}
 
-		if ( defined( 'ACF_VERSION' ) && version_compare( ACF_VERSION, '5.7.0', '<' ) ) {
+		if ( defined( 'ACF_VERSION' ) && version_compare( ACF_VERSION, self::MINIMAL_REQUIRED_ACF_VERSION, '<' ) ) {
 			return false;
 		}
 
@@ -39,10 +41,11 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 	 */
 	public function message_plugin_not_activated() {
 		$message = sprintf(
-			/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Advanced Custom Fields */
-			__( '%1$s requires %2$s (free or pro) 5.7 or higher to be installed and activated.', 'acf-content-analysis-for-yoast-seo' ),
+			/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Advanced Custom Fields, %3$s resolves to the minimum required ACF version. */
+			__( '%1$s requires %2$s (free or pro) %3$s or higher to be installed and activated.', 'acf-content-analysis-for-yoast-seo' ),
 			'ACF Content Analysis for Yoast SEO',
-			'Advanced Custom Fields'
+			'Advanced Custom Fields',
+			self::MINIMAL_REQUIRED_ACF_VERSION
 		);
 
 		printf( '<div class="error"><p>%s</p></div>', esc_html( $message ) );

@@ -10,7 +10,7 @@
  */
 final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysis_Dependency {
 
-	const MINIMAL_REQUIRED_VERSION = 14.9;
+	const MINIMAL_REQUIRED_VERSION = '20.8-RC1';
 
 	/**
 	 * Checks if this dependency is met.
@@ -48,11 +48,10 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 	 */
 	public function message_plugin_not_activated() {
 		$message = sprintf(
-			/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Yoast SEO for WordPress, %3$s resolves to the minimal plugin version */
-			__( '%1$s requires %2$s %3$s (or higher) to be installed and activated.', 'acf-content-analysis-for-yoast-seo' ),
+			/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Yoast SEO. */
+			__( '%1$s requires %2$s to be installed and activated.', 'acf-content-analysis-for-yoast-seo' ),
 			'ACF Content Analysis for Yoast SEO',
-			'Yoast SEO for WordPress',
-			self::MINIMAL_REQUIRED_VERSION
+			'Yoast SEO'
 		);
 
 		printf( '<div class="error"><p>%s</p></div>', esc_html( $message ) );
@@ -63,11 +62,10 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 	 */
 	public function message_minimum_version() {
 		$message = sprintf(
-			/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Yoast SEO for WordPress, %3$s resolves to the minimal plugin version */
-			__( '%1$s requires %2$s %3$s or higher, please update the plugin.', 'acf-content-analysis-for-yoast-seo' ),
-			'ACF Content Analysis for Yoast SEO',
-			'Yoast SEO for WordPress',
-			self::MINIMAL_REQUIRED_VERSION
+			/* translators: %1$s resolves to Yoast SEO, %2$s resolves to ACF Content Analysis for Yoast SEO. */
+			__( 'Please upgrade the %1$s plugin to the latest version to allow the %2$s module to work.', 'acf-content-analysis-for-yoast-seo' ),
+			'Yoast SEO',
+			'ACF Content Analysis for Yoast SEO'
 		);
 
 		printf( '<div class="error"><p>%s</p></div>', esc_html( $message ) );
