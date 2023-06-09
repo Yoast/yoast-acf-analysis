@@ -32,7 +32,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^15.0.0",
+    "browserify": "^16.0.0",
     "chromedriver": "^2.38.3",
     "eslint-browserify": "^1.4.4",
     "eslint-config-yoast": "^3.0.0",
