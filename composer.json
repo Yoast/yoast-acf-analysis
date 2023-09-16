@@ -43,7 +43,7 @@
 	},
 	"require": {
 		"php": "^7.2.5 || ^8.0",
-		"composer/installers": "^1.12.0"
+		"composer/installers": "^1.12.0 || ^2.0"
 	},
 	"require-dev": {
 		"yoast/wp-test-utils": "^1.1.1",
