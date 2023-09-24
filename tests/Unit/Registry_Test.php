@@ -13,7 +13,7 @@ use Yoast_ACF_Analysis_String_Store;
  *
  * @covers Yoast_ACF_Analysis_Registry
  */
-class Registry_Test extends TestCase {
+final class Registry_Test extends TestCase {
 
 	/**
 	 * Tests that the singleton instance is properly set and that every call to the registry, is the same instance.
