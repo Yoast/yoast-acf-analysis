@@ -161,14 +161,12 @@ class Configuration_Test extends TestCase {
 
 		$this->assertSame( $blacklist_name, $configuration->get_blacklist_name() );
 
-
 		Filters\expectApplied( 'ysacf_exclude_fields' )
 			->once()
 			->with( [] )
 			->andReturn( [] );
 
 		$this->assertSame( [], $configuration->get_blacklist_name()->to_array() );
-
 
 		Filters\expectApplied( 'ysacf_exclude_fields' )
 			->once()
