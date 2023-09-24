@@ -95,5 +95,13 @@
 		"fix-cs": [
 			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
 		]
+	},
+	"scripts-descriptions": {
+		"lint": "Check the PHP files for parse errors.",
+		"test": "Run the unit tests without code coverage.",
+		"coverage": "Run the unit tests with code coverage.",
+		"check-cs": "Check the PHP files for code style violations and best practices.",
+		"check-cs-errors": "Alias for check-cs script.",
+		"fix-cs": "Auto-fix code style violations in the PHP files."
 	}
 }
