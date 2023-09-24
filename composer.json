@@ -86,13 +86,6 @@
 		"coverage": [
 			"@php ./vendor/phpunit/phpunit/phpunit --colors=always"
 		],
-		"configure-phpcs": [
-			"@config-yoastcs"
-		],
-		"config-yoastcs": [
-			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
-			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-set default_standard Yoast"
-		],
 		"check-cs": [
 			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
 		],
