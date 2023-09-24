@@ -64,7 +64,7 @@
 			"tests/js/system/data/test-data-loader-functions.php"
 		],
 		"exclude-from-classmap": [
-			"/tests/php/unit/Dependencies/acf.php"
+			"/tests/php/unit/Doubles/acf.php"
 		]
 	},
 	"config": {

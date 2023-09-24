@@ -15,7 +15,7 @@
 	<file>.</file>
 
 	<exclude-pattern>tests/js/system/data/acf*\.php$</exclude-pattern><!-- Code exported from ACF. -->
-	<exclude-pattern>tests/php/unit/Dependencies/acf\.php$</exclude-pattern><!-- ACF mock class. -->
+	<exclude-pattern>tests/php/unit/Doubles/acf\.php$</exclude-pattern><!-- ACF mock class. -->
 
 	<!-- Only check PHP files. -->
 	<arg name="extensions" value="php"/>

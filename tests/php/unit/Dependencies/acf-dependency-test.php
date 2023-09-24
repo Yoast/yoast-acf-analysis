@@ -31,7 +31,7 @@ class ACF_Dependency_Test extends TestCase {
 	public function testACFClassExists() {
 		$testee = new Yoast_ACF_Analysis_Dependency_ACF();
 
-		require_once __DIR__ . \DIRECTORY_SEPARATOR . 'acf.php';
+		require_once \dirname( __DIR__ ) . '/Doubles/acf.php';
 
 		$this->assertTrue( $testee->is_met() );
 	}
