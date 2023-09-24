@@ -373,7 +373,7 @@ class Yoast_ACF_Analysis_Configuration {
 	/**
 	 * Retrieves an array representation of the current object.
 	 *
-	 * @return array
+	 * @return array<string, mixed>
 	 */
 	public function to_array() {
 		return [
