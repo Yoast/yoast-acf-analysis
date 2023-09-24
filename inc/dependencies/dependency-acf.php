@@ -10,7 +10,7 @@
  */
 final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Dependency {
 
-	const MINIMAL_REQUIRED_ACF_VERSION = '6.0.0';
+	public const MINIMAL_REQUIRED_ACF_VERSION = '6.0.0';
 
 	/**
 	 * Checks if ACF is active.
