@@ -9,22 +9,10 @@ use Yoast_ACF_Analysis_Dependency_Yoast_SEO;
  * Class Dependency_Yoast_SEO_Test.
  *
  * @covers Yoast_ACF_Analysis_Dependency_Yoast_SEO
+ *
+ * @runTestsInSeparateProcesses
  */
 class Dependency_Yoast_SEO_Test extends TestCase {
-
-	/**
-	 * Whether or not to preserve the global state.
-	 *
-	 * @var bool
-	 */
-	protected $preserveGlobalState = false;
-
-	/**
-	 * Whether or not to run each test in a separate process.
-	 *
-	 * @var bool
-	 */
-	protected $runTestInSeparateProcess = true;
 
 	/**
 	 * Tests that requirements are not met when Yoast SEO can't be found.
