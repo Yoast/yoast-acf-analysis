@@ -1,100 +1,107 @@
 {
-  "name": "yoast/yoast-acf-analysis",
-  "description": "WordPress plugin that adds the content of all ACF fields to the Yoast SEO score analysis.",
-  "keywords": [
-    "yoast",
-    "seo",
-    "acf",
-    "advanced",
-    "custom",
-    "fields",
-    "analysis",
-    "search",
-    "engine",
-    "optimization",
-    "seo",
-    "score"
-  ],
-  "type": "wordpress-plugin",
-  "homepage": "https://wordpress.org/plugins/acf-content-analysis-for-yoast-seo/",
-  "license": "GPL-3.0-or-later",
-  "authors": [
-    {
-      "name": "Thomas Kräftner",
-      "email": "thomas@kraftner.com",
-      "homepage": "http://kraftner.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Marcus Forsberg",
-      "homepage": "https://forsberg.ax",
-      "role": "Developer"
-    },
-    {
-      "name": "Team Yoast",
-      "email": "support@yoast.com",
-      "homepage": "https://yoast.com"
-    }
-  ],
-  "support": {
-    "issues": "https://github.com/Yoast/yoast-acf-analysis/issues",
-    "forum": "https://wordpress.org/support/plugin/acf-content-analysis-for-yoast-seo",
-    "source": "https://github.com/Yoast/yoast-acf-analysis"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require": {
-    "php": "^7.2.5 || ^8.0",
-    "composer/installers": "^1.12.0"
-  },
-  "require-dev": {
-    "yoast/yoastcs": "^2.3.1",
-    "yoast/wp-test-utils": "^1.1.1"
-  },
-  "autoload": {
-    "classmap": [ "inc" ]
-  },
-  "autoload-dev": {
-    "classmap": [ "tests/php/unit" ],
-    "exclude-from-classmap": ["/tests/php/unit/Dependencies/acf.php"],
-    "files": [
-      "tests/js/system/data/test-data-loader-functions.php"
-    ]
-  },
-  "config": {
-    "platform": {
-      "php": "7.2.5"
-    },
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "composer/installers": true
-    }
-  },
-  "scripts": {
-    "lint": [
-      "@php ./vendor/php-parallel-lint/php-parallel-lint/parallel-lint . -e php --show-deprecated --exclude vendor --exclude node_modules --exclude .git"
-    ],
-    "test": [
-      "@php ./vendor/phpunit/phpunit/phpunit --no-coverage --colors=always"
-    ],
-    "coverage": [
-      "@php ./vendor/phpunit/phpunit/phpunit --colors=always"
-    ],
-    "configure-phpcs": [
-      "@config-yoastcs"
-    ],
-    "config-yoastcs": [
-      "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
-      "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --config-set default_standard Yoast"
-    ],
-    "check-cs": [
-      "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
-    ],
-    "check-cs-errors": [
-      "@check-cs"
-    ],
-    "fix-cs": [
-      "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
-    ]
-  }
+	"name": "yoast/yoast-acf-analysis",
+	"description": "WordPress plugin that adds the content of all ACF fields to the Yoast SEO score analysis.",
+	"license": "GPL-3.0-or-later",
+	"type": "wordpress-plugin",
+	"keywords": [
+		"yoast",
+		"seo",
+		"acf",
+		"advanced",
+		"custom",
+		"fields",
+		"analysis",
+		"search",
+		"engine",
+		"optimization",
+		"seo",
+		"score"
+	],
+	"authors": [
+		{
+			"name": "Thomas Kräftner",
+			"email": "thomas@kraftner.com",
+			"homepage": "http://kraftner.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Marcus Forsberg",
+			"homepage": "https://forsberg.ax",
+			"role": "Developer"
+		},
+		{
+			"name": "Team Yoast",
+			"email": "support@yoast.com",
+			"homepage": "https://yoast.com"
+		}
+	],
+	"homepage": "https://wordpress.org/plugins/acf-content-analysis-for-yoast-seo/",
+	"support": {
+		"issues": "https://github.com/Yoast/yoast-acf-analysis/issues",
+		"forum": "https://wordpress.org/support/plugin/acf-content-analysis-for-yoast-seo",
+		"source": "https://github.com/Yoast/yoast-acf-analysis"
+	},
+	"require": {
+		"php": "^7.2.5 || ^8.0",
+		"composer/installers": "^1.12.0"
+	},
+	"require-dev": {
+		"yoast/wp-test-utils": "^1.1.1",
+		"yoast/yoastcs": "^2.3.1"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"classmap": [
+			"inc"
+		]
+	},
+	"autoload-dev": {
+		"classmap": [
+			"tests/php/unit"
+		],
+		"files": [
+			"tests/js/system/data/test-data-loader-functions.php"
+		],
+		"exclude-from-classmap": [
+			"/tests/php/unit/Dependencies/acf.php"
+		]
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true
+		},
+		"platform": {
+			"php": "7.2.5"
+		}
+	},
+	"scripts": {
+		"lint": [
+			"@php ./vendor/php-parallel-lint/php-parallel-lint/parallel-lint . -e php --show-deprecated --exclude vendor --exclude node_modules --exclude .git"
+		],
+		"test": [
+			"@php ./vendor/phpunit/phpunit/phpunit --no-coverage --colors=always"
+		],
+		"coverage": [
+			"@php ./vendor/phpunit/phpunit/phpunit --colors=always"
+		],
+		"check-cs": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
+		],
+		"check-cs-errors": [
+			"@check-cs"
+		],
+		"fix-cs": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+		]
+	},
+	"scripts-descriptions": {
+		"lint": "Check the PHP files for parse errors.",
+		"test": "Run the unit tests without code coverage.",
+		"coverage": "Run the unit tests with code coverage.",
+		"check-cs": "Check the PHP files for code style violations and best practices.",
+		"check-cs-errors": "Alias for check-cs script.",
+		"fix-cs": "Auto-fix code style violations in the PHP files."
+	}
 }
