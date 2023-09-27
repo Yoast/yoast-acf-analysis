@@ -5,21 +5,18 @@
 # https://www.reddit.com/r/PHP/comments/2jzp6k/i_dont_need_your_tests_in_my_production
 # https://blog.madewithlove.be/post/gitattributes/
 #
-.cache export-ignore
-.github export-ignore
-grunt export-ignore
-tests export-ignore
-.eslintrc export-ignore
-.gitattributes export-ignore
-.gitignore export-ignore
-.phpcs.xml export-ignore
-.phpcs.xml.dist export-ignore
-Gruntfile.js export-ignore
-package.json export-ignore
-phpcs.xml export-ignore
-phpcs.xml.dist export-ignore
-phpunit.xml export-ignore
+/.cache          export-ignore
+/.github         export-ignore
+/grunt           export-ignore
+/tests           export-ignore
+.eslintrc        export-ignore
+.gitattributes   export-ignore
+.gitignore       export-ignore
+.phpcs.xml.dist  export-ignore
+Gruntfile.js     export-ignore
+package.json     export-ignore
 phpunit.xml.dist export-ignore
+renovate.json    export-ignore
 
 #
 # Auto detect text files and perform LF normalization
