@@ -1,10 +1,10 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests;
+namespace Yoast\WP\ACF\Tests\Unit;
 
 use Brain\Monkey\Functions;
-use Yoast\WP\ACF\Tests\Doubles\Failing_Dependency;
-use Yoast\WP\ACF\Tests\Doubles\Passing_Dependency;
+use Yoast\WP\ACF\Tests\Unit\Doubles\Failing_Dependency;
+use Yoast\WP\ACF\Tests\Unit\Doubles\Passing_Dependency;
 use Yoast\WPTestUtils\BrainMonkey\TestCase;
 use Yoast_ACF_Analysis_Requirements;
 

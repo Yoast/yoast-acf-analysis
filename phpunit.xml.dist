@@ -16,7 +16,7 @@
 	>
 	<testsuites>
 		<testsuite name="yoastacf">
-			<directory suffix="test.php">tests/php/unit</directory>
+			<directory suffix="test.php">tests/Unit</directory>
 		</testsuite>
 	</testsuites>
 

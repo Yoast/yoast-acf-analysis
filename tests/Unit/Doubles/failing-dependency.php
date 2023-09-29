@@ -1,6 +1,6 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests\Doubles;
+namespace Yoast\WP\ACF\Tests\Unit\Doubles;
 
 use Yoast_ACF_Analysis_Dependency;
 

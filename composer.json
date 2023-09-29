@@ -58,13 +58,13 @@
 	},
 	"autoload-dev": {
 		"classmap": [
-			"tests/php/unit"
+			"tests/Unit"
 		],
 		"files": [
 			"tests/js/system/data/test-data-loader-functions.php"
 		],
 		"exclude-from-classmap": [
-			"/tests/php/unit/Doubles/acf.php"
+			"/tests/Unit/Doubles/acf.php"
 		]
 	},
 	"config": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests\Dependencies;
+namespace Yoast\WP\ACF\Tests\Unit\Dependencies;
 
 use Yoast\WPTestUtils\BrainMonkey\TestCase;
 use Yoast_ACF_Analysis_Dependency_Yoast_SEO;

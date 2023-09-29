@@ -1,6 +1,6 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests;
+namespace Yoast\WP\ACF\Tests\Unit;
 
 use Brain\Monkey\Functions;
 use Yoast\WPTestUtils\BrainMonkey\TestCase;
