@@ -6,11 +6,11 @@ use Yoast\WPTestUtils\BrainMonkey\TestCase;
 use Yoast_ACF_Analysis_Dependency_ACF;
 
 /**
- * Class ACF_Dependency_Test.
+ * Class Dependency_ACF_Test.
  *
  * @covers Yoast_ACF_Analysis_Dependency_ACF
  */
-class ACF_Dependency_Test extends TestCase {
+class Dependency_ACF_Test extends TestCase {
 
 	/**
 	 * Tests the situation where no ACF class exists.

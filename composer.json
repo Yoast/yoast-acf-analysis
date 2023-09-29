@@ -57,14 +57,11 @@
 		]
 	},
 	"autoload-dev": {
-		"classmap": [
-			"tests/Unit"
-		],
+		"psr-4": {
+			"Yoast\\WP\\ACF\\Tests\\": "tests/"
+		},
 		"files": [
 			"tests/js/system/data/test-data-loader-functions.php"
-		],
-		"exclude-from-classmap": [
-			"/tests/Unit/Doubles/acf.php"
 		]
 	},
 	"config": {
