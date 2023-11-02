@@ -80,6 +80,14 @@
 		</properties>
 	</rule>
 
+	<rule ref="Yoast.Files.TestDoubles">
+		<properties>
+			<property name="doubles_path" type="array">
+				<element value="/tests/Unit/Doubles"/>
+			</property>
+		</properties>
+	</rule>
+
 	<rule ref="Yoast.NamingConventions.NamespaceName">
 		<properties>
 			<!-- Treat the "tests/php/unit" directory as a project root for path to namespace translations. -->
