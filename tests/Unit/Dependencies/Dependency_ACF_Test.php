@@ -1,16 +1,16 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests\Dependencies;
+namespace Yoast\WP\ACF\Tests\Unit\Dependencies;
 
 use Yoast\WPTestUtils\BrainMonkey\TestCase;
 use Yoast_ACF_Analysis_Dependency_ACF;
 
 /**
- * Class ACF_Dependency_Test.
+ * Class Dependency_ACF_Test.
  *
  * @covers Yoast_ACF_Analysis_Dependency_ACF
  */
-class ACF_Dependency_Test extends TestCase {
+class Dependency_ACF_Test extends TestCase {
 
 	/**
 	 * Tests the situation where no ACF class exists.
@@ -31,7 +31,7 @@ class ACF_Dependency_Test extends TestCase {
 	public function testACFClassExists() {
 		$testee = new Yoast_ACF_Analysis_Dependency_ACF();
 
-		require_once __DIR__ . \DIRECTORY_SEPARATOR . 'acf.php';
+		require_once \dirname( __DIR__ ) . '/Doubles/acf.php';
 
 		$this->assertTrue( $testee->is_met() );
 	}

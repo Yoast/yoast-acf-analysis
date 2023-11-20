@@ -1,10 +1,10 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests;
+namespace Yoast\WP\ACF\Tests\Unit;
 
 use Brain\Monkey\Functions;
-use Yoast\WP\ACF\Tests\Doubles\Failing_Dependency;
-use Yoast\WP\ACF\Tests\Doubles\Passing_Dependency;
+use Yoast\WP\ACF\Tests\Unit\Doubles\Failing_Dependency_Mock;
+use Yoast\WP\ACF\Tests\Unit\Doubles\Passing_Dependency_Mock;
 use Yoast\WPTestUtils\BrainMonkey\TestCase;
 use Yoast_ACF_Analysis_Requirements;
 
@@ -44,7 +44,7 @@ class Requirements_Test extends TestCase {
 	 */
 	public function testPassingDependency() {
 		$testee = new Yoast_ACF_Analysis_Requirements();
-		$testee->add_dependency( new Passing_Dependency() );
+		$testee->add_dependency( new Passing_Dependency_Mock() );
 
 		$this->assertTrue( $testee->are_met() );
 	}
@@ -59,7 +59,7 @@ class Requirements_Test extends TestCase {
 	 */
 	public function testFailingDependency() {
 		$testee = new Yoast_ACF_Analysis_Requirements();
-		$testee->add_dependency( new Failing_Dependency() );
+		$testee->add_dependency( new Failing_Dependency_Mock() );
 
 		$this->assertFalse( $testee->are_met() );
 	}
@@ -74,8 +74,8 @@ class Requirements_Test extends TestCase {
 	 */
 	public function testMixedDependencies() {
 		$testee = new Yoast_ACF_Analysis_Requirements();
-		$testee->add_dependency( new Failing_Dependency() );
-		$testee->add_dependency( new Passing_Dependency() );
+		$testee->add_dependency( new Failing_Dependency_Mock() );
+		$testee->add_dependency( new Passing_Dependency_Mock() );
 
 		$this->assertFalse( $testee->are_met() );
 	}

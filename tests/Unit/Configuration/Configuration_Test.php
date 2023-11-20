@@ -1,6 +1,6 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests\Configuration;
+namespace Yoast\WP\ACF\Tests\Unit\Configuration;
 
 use Brain\Monkey\Filters;
 use Brain\Monkey\Functions;

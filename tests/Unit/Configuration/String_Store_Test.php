@@ -1,6 +1,6 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests\Configuration;
+namespace Yoast\WP\ACF\Tests\Unit\Configuration;
 
 use Yoast\PHPUnitPolyfills\TestCases\TestCase;
 use Yoast_ACF_Analysis_String_Store;

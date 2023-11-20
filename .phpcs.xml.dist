@@ -15,7 +15,7 @@
 	<file>.</file>
 
 	<exclude-pattern>tests/js/system/data/acf*\.php$</exclude-pattern><!-- Code exported from ACF. -->
-	<exclude-pattern>tests/php/unit/Dependencies/acf\.php$</exclude-pattern><!-- ACF mock class. -->
+	<exclude-pattern>tests/Unit/Doubles/acf\.php$</exclude-pattern><!-- ACF mock class. -->
 
 	<!-- Only check PHP files. -->
 	<arg name="extensions" value="php"/>
@@ -80,15 +80,23 @@
 		</properties>
 	</rule>
 
+	<rule ref="Yoast.Files.TestDoubles">
+		<properties>
+			<property name="doubles_path" type="array">
+				<element value="/tests/Unit/Doubles"/>
+			</property>
+		</properties>
+	</rule>
+
 	<rule ref="Yoast.NamingConventions.NamespaceName">
 		<properties>
-			<!-- Treat the "tests/php/unit" directory as a project root for path to namespace translations. -->
+			<!-- Treat the "tests/Unit" directory as a project root for path to namespace translations. -->
 			<property name="src_directory" type="array">
-				<element value="tests/php/unit"/>
+				<element value="tests/Unit"/>
 			</property>
 
 			<property name="prefixes" type="array" extend="true">
-				<element value="Yoast\WP\ACF\Tests"/>
+				<element value="Yoast\WP\ACF\Tests\Unit"/>
 			</property>
 		</properties>
 	</rule>
@@ -113,8 +121,7 @@
 
 	<!-- Valid usage: For testing purposes, some non-prefixed globals are being created. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-		<exclude-pattern>/integration-tests/bootstrap\.php$</exclude-pattern>
-		<exclude-pattern>/tests/bootstrap\.php$</exclude-pattern>
+		<exclude-pattern>/tests/Unit/bootstrap\.php$</exclude-pattern>
 	</rule>
 
 
@@ -139,7 +146,12 @@
 		 by WPCS. This will most likely be fixed once PHPCS 3.5.0 has been released and
 		 WPCS has upgraded to that version. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound">
-		<exclude-pattern>/tests/php/unit/Dependencies/yoast-seo-dependency-test\.php$</exclude-pattern>
+		<exclude-pattern>/tests/Unit/Dependencies/Dependency_Yoast_SEO_Test\.php$</exclude-pattern>
+	</rule>
+
+	<!-- The below issue will be fixed in YoastCS 3.0, after which this exclude can be removed. -->
+	<rule ref="Yoast.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>/tests/Unit/*\.php$</exclude-pattern>
 	</rule>
 
 </ruleset>

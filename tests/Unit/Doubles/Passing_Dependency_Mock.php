@@ -1,13 +1,13 @@
 <?php
 
-namespace Yoast\WP\ACF\Tests\Doubles;
+namespace Yoast\WP\ACF\Tests\Unit\Doubles;
 
 use Yoast_ACF_Analysis_Dependency;
 
 /**
- * Class Failing_Dependency.
+ * Class Passing_Dependency_Mock.
  */
-class Failing_Dependency implements Yoast_ACF_Analysis_Dependency {
+class Passing_Dependency_Mock implements Yoast_ACF_Analysis_Dependency {
 
 	/**
 	 * Checks if this dependency is met.
@@ -15,7 +15,7 @@ class Failing_Dependency implements Yoast_ACF_Analysis_Dependency {
 	 * @return bool True when met, false when not met.
 	 */
 	public function is_met() {
-		return false;
+		return true;
 	}
 
 	/**
