@@ -101,16 +101,6 @@
 		</properties>
 	</rule>
 
-	<!-- Whitelist a few non-snakecase PHPUnit properties. -->
-	<rule ref="WordPress.NamingConventions.ValidVariableName">
-		<properties>
-			<property name="customPropertiesWhitelist" type="array">
-				<element value="preserveGlobalState"/>
-				<element value="runTestInSeparateProcess"/>
-			</property>
-		</properties>
-	</rule>
-
 
 	<!--
 	#############################################################################

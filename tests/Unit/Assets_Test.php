@@ -10,22 +10,11 @@ use Yoast_ACF_Analysis_Assets;
  * Class Assets_Test.
  *
  * @covers Yoast_ACF_Analysis_Assets
+ *
+ * @preserveGlobalState disabled
+ * @runTestsInSeparateProcesses
  */
 class Assets_Test extends TestCase {
-
-	/**
-	 * Whether or not to preserve the global state.
-	 *
-	 * @var bool
-	 */
-	protected $preserveGlobalState = false;
-
-	/**
-	 * Whether or not to run each test in a separate process.
-	 *
-	 * @var bool
-	 */
-	protected $runTestInSeparateProcess = true;
 
 	/**
 	 * Test the init hook and determines whether the proper assets are loaded.
