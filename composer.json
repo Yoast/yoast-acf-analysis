@@ -78,10 +78,10 @@
 			"@php ./vendor/php-parallel-lint/php-parallel-lint/parallel-lint . -e php --show-deprecated --exclude vendor --exclude node_modules --exclude .git"
 		],
 		"test": [
-			"@php ./vendor/phpunit/phpunit/phpunit --no-coverage --colors=always"
+			"@php ./vendor/phpunit/phpunit/phpunit --no-coverage"
 		],
 		"coverage": [
-			"@php ./vendor/phpunit/phpunit/phpunit --colors=always"
+			"@php ./vendor/phpunit/phpunit/phpunit"
 		],
 		"check-cs": [
 			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
