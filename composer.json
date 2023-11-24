@@ -39,7 +39,8 @@
 	"support": {
 		"issues": "https://github.com/Yoast/yoast-acf-analysis/issues",
 		"forum": "https://wordpress.org/support/plugin/acf-content-analysis-for-yoast-seo",
-		"source": "https://github.com/Yoast/yoast-acf-analysis"
+		"source": "https://github.com/Yoast/yoast-acf-analysis",
+		"security": "https://yoast.com/security-program/"
 	},
 	"require": {
 		"php": "^7.2.5 || ^8.0",
