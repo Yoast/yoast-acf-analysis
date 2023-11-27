@@ -58,6 +58,9 @@
 		]
 	},
 	"autoload-dev": {
+		"classmap": [
+			"config/"
+		],
 		"psr-4": {
 			"Yoast\\WP\\ACF\\Tests\\": "tests/"
 		},
@@ -78,28 +81,50 @@
 		"lint": [
 			"@php ./vendor/php-parallel-lint/php-parallel-lint/parallel-lint . -e php --show-deprecated --exclude vendor --exclude node_modules --exclude .git"
 		],
+		"cs": [
+			"Yoast\\WP\\ACF\\Config\\Composer\\Actions::check_coding_standards"
+		],
+		"check-cs-thresholds": [
+			"@putenv YOASTCS_THRESHOLD_ERRORS=0",
+			"@putenv YOASTCS_THRESHOLD_WARNINGS=0",
+			"Yoast\\WP\\ACF\\Config\\Composer\\Actions::check_cs_thresholds"
+		],
+		"check-cs": [
+			"@check-cs-warnings -n"
+		],
+		"check-cs-errors": [
+			"@check-cs"
+		],
+		"check-cs-warnings": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
+		],
+		"check-staged-cs": [
+			"@check-cs-warnings --filter=GitStaged"
+		],
+		"check-branch-cs": [
+			"Yoast\\WP\\ACF\\Config\\Composer\\Actions::check_branch_cs"
+		],
+		"fix-cs": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+		],
 		"test": [
 			"@php ./vendor/phpunit/phpunit/phpunit --no-coverage"
 		],
 		"coverage": [
 			"@php ./vendor/phpunit/phpunit/phpunit"
-		],
-		"check-cs": [
-			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
-		],
-		"check-cs-errors": [
-			"@check-cs"
-		],
-		"fix-cs": [
-			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
 		]
 	},
 	"scripts-descriptions": {
 		"lint": "Check the PHP files for parse errors.",
-		"test": "Run the unit tests without code coverage.",
-		"coverage": "Run the unit tests with code coverage.",
-		"check-cs": "Check the PHP files for code style violations and best practices.",
+		"cs": "See a menu with the code style checking script options.",
+		"check-cs-thresholds": "Check the PHP files for code style violations and best practices and verify the number of issues does not exceed predefined thresholds.",
+		"check-cs": "Check the PHP files for code style violations and best practices, ignoring warnings.",
 		"check-cs-errors": "Alias for check-cs script.",
-		"fix-cs": "Auto-fix code style violations in the PHP files."
+		"check-cs-warnings": "Check the PHP files for code style violations and best practices, including warnings.",
+		"check-staged-cs": "Check the staged PHP files for code style violations and best practices.",
+		"check-branch-cs": "Check the PHP files changed in the current branch for code style violations and best practices.",
+		"fix-cs": "Auto-fix code style violations in the PHP files.",
+		"test": "Run the unit tests without code coverage.",
+		"coverage": "Run the unit tests with code coverage."
 	}
 }
