@@ -12,7 +12,7 @@ use Yoast_ACF_Analysis_Dependency_Yoast_SEO;
  *
  * @runTestsInSeparateProcesses
  */
-class Dependency_Yoast_SEO_Test extends TestCase {
+final class Dependency_Yoast_SEO_Test extends TestCase {
 
 	/**
 	 * Tests that requirements are not met when Yoast SEO can't be found.

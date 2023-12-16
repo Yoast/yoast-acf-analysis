@@ -14,7 +14,7 @@ use Yoast_ACF_Analysis_String_Store;
  *
  * @covers Yoast_ACF_Analysis_Configuration
  */
-class Configuration_Test extends TestCase {
+final class Configuration_Test extends TestCase {
 
 	/**
 	 * Tests empty configurations.

@@ -14,7 +14,7 @@ use Yoast_ACF_Analysis_Assets;
  * @preserveGlobalState disabled
  * @runTestsInSeparateProcesses
  */
-class Assets_Test extends TestCase {
+final class Assets_Test extends TestCase {
 
 	/**
 	 * Test the init hook and determines whether the proper assets are loaded.

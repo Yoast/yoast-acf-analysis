@@ -10,7 +10,7 @@ use Yoast_ACF_Analysis_Dependency_ACF;
  *
  * @covers Yoast_ACF_Analysis_Dependency_ACF
  */
-class Dependency_ACF_Test extends TestCase {
+final class Dependency_ACF_Test extends TestCase {
 
 	/**
 	 * Tests the situation where no ACF class exists.

@@ -10,7 +10,7 @@ use Yoast_ACF_Analysis_Facade;
 /**
  * Class Main_Test.
  */
-class Main_Test extends TestCase {
+final class Main_Test extends TestCase {
 
 	/**
 	 * Tests invalid configurations.

@@ -11,7 +11,7 @@ use Yoast_ACF_Analysis_Requirements;
 /**
  * Class Requirements_Test.
  */
-class Requirements_Test extends TestCase {
+final class Requirements_Test extends TestCase {
 
 	/**
 	 * Sets up test fixtures.

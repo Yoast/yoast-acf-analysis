@@ -7,7 +7,7 @@ use Yoast_ACF_Analysis_Dependency;
 /**
  * Class Failing_Dependency_Mock.
  */
-class Failing_Dependency_Mock implements Yoast_ACF_Analysis_Dependency {
+final class Failing_Dependency_Mock implements Yoast_ACF_Analysis_Dependency {
 
 	/**
 	 * Checks if this dependency is met.
