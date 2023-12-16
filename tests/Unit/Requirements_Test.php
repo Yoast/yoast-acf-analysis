@@ -15,6 +15,8 @@ class Requirements_Test extends TestCase {
 
 	/**
 	 * Sets up test fixtures.
+	 *
+	 * @return void
 	 */
 	protected function set_up() {
 		parent::set_up();

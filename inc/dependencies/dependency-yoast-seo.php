@@ -31,6 +31,8 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 
 	/**
 	 * Registers the notifications to be shown.
+	 *
+	 * @return void
 	 */
 	public function register_notifications() {
 		if ( ! defined( 'WPSEO_VERSION' ) ) {
@@ -45,6 +47,8 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 
 	/**
 	 * Notify that we need Yoast SEO for WordPress to be installed and active.
+	 *
+	 * @return void
 	 */
 	public function message_plugin_not_activated() {
 		$message = sprintf(
@@ -59,6 +63,8 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 
 	/**
 	 * Notify that we need Yoast SEO for WordPress to be installed and active.
+	 *
+	 * @return void
 	 */
 	public function message_minimum_version() {
 		$message = sprintf(

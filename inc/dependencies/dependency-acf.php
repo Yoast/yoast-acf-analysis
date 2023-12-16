@@ -31,6 +31,8 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 
 	/**
 	 * Registers the notification to show when the conditions are not met.
+	 *
+	 * @return void
 	 */
 	public function register_notifications() {
 		add_action( 'admin_notices', [ $this, 'message_plugin_not_activated' ] );
@@ -38,6 +40,8 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 
 	/**
 	 * Notify that we need ACF to be installed and active.
+	 *
+	 * @return void
 	 */
 	public function message_plugin_not_activated() {
 		$message = sprintf(

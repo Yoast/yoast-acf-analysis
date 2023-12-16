@@ -21,6 +21,8 @@ class Yoast_ACF_Analysis_Requirements {
 	 * Adds a dependency.
 	 *
 	 * @param Yoast_ACF_Analysis_Dependency $dependency Dependency to add.
+	 *
+	 * @return void
 	 */
 	public function add_dependency( Yoast_ACF_Analysis_Dependency $dependency ) {
 		$this->dependencies[] = $dependency;
