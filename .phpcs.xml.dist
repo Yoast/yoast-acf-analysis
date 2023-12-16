@@ -8,7 +8,7 @@
 	<!--
 	#############################################################################
 	COMMAND LINE ARGUMENTS
-	https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
+	https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
 	#############################################################################
 	-->
 
@@ -46,6 +46,10 @@
 				<element value="Yoast\WP\ACF"/>
 				<element value="yoast_acf"/>
 			</property>
+
+			<property name="psr4_paths" type="array">
+				<element key="Yoast\WP\ACF\Tests\\" value="tests/"/>
+			</property>
 		</properties>
 	</rule>
 
@@ -80,40 +84,6 @@
 		</properties>
 	</rule>
 
-	<rule ref="Yoast.Files.TestDoubles">
-		<properties>
-			<property name="doubles_path" type="array">
-				<element value="/tests/Unit/Doubles"/>
-			</property>
-		</properties>
-	</rule>
-
-	<rule ref="Yoast.NamingConventions.NamespaceName">
-		<properties>
-			<!-- Treat the "tests/Unit" directory as a project root for path to namespace translations. -->
-			<property name="src_directory" type="array">
-				<element value="tests/Unit"/>
-			</property>
-
-			<property name="prefixes" type="array" extend="true">
-				<element value="Yoast\WP\ACF\Tests\Unit"/>
-			</property>
-		</properties>
-	</rule>
-
-
-	<!--
-	#############################################################################
-	SELECTIVE EXCLUSIONS
-	Exclude specific files for specific sniffs and/or exclude sub-groups in sniffs.
-	#############################################################################
-	-->
-
-	<!-- Valid usage: For testing purposes, some non-prefixed globals are being created. -->
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-		<exclude-pattern>/tests/Unit/bootstrap\.php$</exclude-pattern>
-	</rule>
-
 
 	<!--
 	#############################################################################
@@ -133,15 +103,9 @@
 	</rule>
 
 	<!-- Namespaced test classes imported via a use statement are not yet correctly excluded
-		 by WPCS. This will most likely be fixed once PHPCS 3.5.0 has been released and
-		 WPCS has upgraded to that version. -->
+		 by WPCS. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound">
 		<exclude-pattern>/tests/Unit/Dependencies/Dependency_Yoast_SEO_Test\.php$</exclude-pattern>
-	</rule>
-
-	<!-- The below issue will be fixed in YoastCS 3.0, after which this exclude can be removed. -->
-	<rule ref="Yoast.Files.FileName.InvalidClassFileName">
-		<exclude-pattern>/tests/Unit/*\.php$</exclude-pattern>
 	</rule>
 
 </ruleset>

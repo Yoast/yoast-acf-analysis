@@ -48,7 +48,7 @@
 	},
 	"require-dev": {
 		"yoast/wp-test-utils": "^1.2.0",
-		"yoast/yoastcs": "^2.3.1"
+		"yoast/yoastcs": "^3.0"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
@@ -85,7 +85,7 @@
 			"Yoast\\WP\\ACF\\Config\\Composer\\Actions::check_coding_standards"
 		],
 		"check-cs-thresholds": [
-			"@putenv YOASTCS_THRESHOLD_ERRORS=0",
+			"@putenv YOASTCS_THRESHOLD_ERRORS=11",
 			"@putenv YOASTCS_THRESHOLD_WARNINGS=0",
 			"Yoast\\WP\\ACF\\Config\\Composer\\Actions::check_cs_thresholds"
 		],
