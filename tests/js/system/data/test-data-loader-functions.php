@@ -12,6 +12,8 @@ if ( function_exists( 'add_action' ) ) {
 
 /**
  * Loads ACF test data for the ACF version being tested.
+ *
+ * @return void
  */
 function yoast_acf_analysis_test_data_loader() {
 

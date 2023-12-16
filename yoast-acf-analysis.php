@@ -49,6 +49,8 @@ else {
 
 /**
  * Show admin notice when ACF is missing.
+ *
+ * @return void
  */
 function yoast_acf_report_missing_acf() {
 	echo '<div class="error"><p>';
@@ -67,6 +69,8 @@ function yoast_acf_report_missing_acf() {
  *
  * @deprecated 2.0.1
  * @codeCoverageIgnore
+ *
+ * @return void
  */
 function yoast_acf_analysis_load_textdomain() {
 	// As we require WordPress 4.6 and higher, we don't need to load the translation files manually anymore.
