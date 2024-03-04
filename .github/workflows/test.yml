@@ -76,7 +76,7 @@ jobs:
       # - Updates the test utilities to the most appropriate version for the PHP version on which the tests will be run.
       # @link https://github.com/marketplace/actions/install-php-dependencies-with-composer
       - name: Install Composer dependencies
-        uses: ramsey/composer-install@v2
+        uses: ramsey/composer-install@v3
         with:
           # Force a `composer update` run.
           dependency-versions: "highest"
