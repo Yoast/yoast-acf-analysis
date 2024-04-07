@@ -48,7 +48,7 @@
 	},
 	"require-dev": {
 		"yoast/wp-test-utils": "^1.2.0",
-		"yoast/yoastcs": "^3.0"
+		"yoast/yoastcs": "^3.1.0"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
