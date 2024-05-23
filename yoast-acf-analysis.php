@@ -14,7 +14,7 @@
  * License:     GPL v3
  * Text Domain: acf-content-analysis-for-yoast-seo
  * Domain Path: /languages/
- * Requires at least: 6.3
+ * Requires at least: 6.4
  * Requires PHP: 7.2.5
  */
 
