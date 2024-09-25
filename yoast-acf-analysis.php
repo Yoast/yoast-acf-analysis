@@ -53,13 +53,29 @@ else {
  * @return void
  */
 function yoast_acf_report_missing_acf() {
-	echo '<div class="error"><p>';
-	printf(
-		/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO */
-		esc_html__( '%1$s could not be loaded because of missing files.', 'acf-content-analysis-for-yoast-seo' ),
-		'ACF Content Analysis for Yoast SEO'
+	echo (
+		'<div class="error yoast-migrated-notice">'
+			. '<h4 class="yoast-notice-migrated-header">'
+			. sprintf(
+				/* translators: %1$s: ACF Content Analysis for Yoast SEO */
+				esc_html__( '%1$s could not loaded', 'acf-content-analysis-for-yoast-seo' ),
+				'ACF Content Analysis for Yoast SEO'
+			)
+			. '</h4>'
+			. '<div class="notice-yoast-content">'
+				. '<p>'
+				. sprintf(
+					/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO */
+					esc_html__(
+						'%1$s could not be loaded because of missing files.',
+						'acf-content-analysis-for-yoast-seo'
+					),
+					'ACF Content Analysis for Yoast SEO'
+				)
+				. '</p>'
+			. '</div>'
+		. '</div>'
 	);
-	echo '</p></div>';
 }
 
 /* ********************* DEPRECATED FUNCTIONS ********************* */
