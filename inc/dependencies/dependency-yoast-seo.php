@@ -88,7 +88,7 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 				. '<h4 class="yoast-notice-migrated-header">'
 				. sprintf(
 					/* translators: %1$s: Yoast SEO */
-					esc_html__( 'Install latest %1$s', 'acf-content-analysis-for-yoast-seo' ),
+					esc_html__( 'Update %1$s', 'acf-content-analysis-for-yoast-seo' ),
 					'Yoast SEO'
 				)
 				. '</h4>'

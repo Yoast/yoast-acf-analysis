@@ -58,7 +58,7 @@ function yoast_acf_report_missing_acf() {
 			. '<h4 class="yoast-notice-migrated-header">'
 			. sprintf(
 				/* translators: %1$s: ACF Content Analysis for Yoast SEO */
-				esc_html__( '%1$s could not loaded', 'acf-content-analysis-for-yoast-seo' ),
+				esc_html__( 'Unable to load %1$s', 'acf-content-analysis-for-yoast-seo' ),
 				'ACF Content Analysis for Yoast SEO'
 			)
 			. '</h4>'
