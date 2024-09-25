@@ -49,7 +49,7 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 				. '<h4 class="yoast-notice-migrated-header">'
 				. sprintf(
 					/* translators: %1$s: Advanced Custom Fields */
-					esc_html__( 'Install latest %1$s', 'wordpress-seo-news' ),
+					esc_html__( 'Install latest %1$s', 'acf-content-analysis-for-yoast-seo' ),
 					'Advanced Custom Fields'
 				)
 				. '</h4>'
@@ -63,6 +63,7 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 						),
 						'ACF Content Analysis for Yoast SEO',
 						'Advanced Custom Fields',
+						// phpcs:ignore WordPress.Security.EscapeOutput -- Reason: This is a hardcoded value.
 						self::MINIMAL_REQUIRED_ACF_VERSION
 					)
 					. '</p>'
