@@ -44,14 +44,30 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 	 * @return void
 	 */
 	public function message_plugin_not_activated() {
-		$message = sprintf(
-			/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Advanced Custom Fields, %3$s resolves to the minimum required ACF version. */
-			__( '%1$s requires %2$s (free or pro) %3$s or higher to be installed and activated.', 'acf-content-analysis-for-yoast-seo' ),
-			'ACF Content Analysis for Yoast SEO',
-			'Advanced Custom Fields',
-			self::MINIMAL_REQUIRED_ACF_VERSION
+		echo (
+			'<div class="error yoast-migrated-notice">'
+				. '<h4 class="yoast-notice-migrated-header">'
+				. sprintf(
+					/* translators: %1$s: Advanced Custom Fields */
+					esc_html__( 'Install latest %1$s', 'wordpress-seo-news' ),
+					'Advanced Custom Fields'
+				)
+				. '</h4>'
+				. '<div class="notice-yoast-content">'
+					. '<p>'
+					. sprintf(
+						/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Advanced Custom Fields, %3$s resolves to the minimum required ACF version. */
+						esc_html__(
+							'%1$s requires %2$s (free or pro) %3$s or higher to be installed and activated.',
+							'acf-content-analysis-for-yoast-seo'
+						),
+						'ACF Content Analysis for Yoast SEO',
+						'Advanced Custom Fields',
+						self::MINIMAL_REQUIRED_ACF_VERSION
+					)
+					. '</p>'
+				. '</div>'
+			. '</div>'
 		);
-
-		printf( '<div class="error"><p>%s</p></div>', esc_html( $message ) );
 	}
 }
