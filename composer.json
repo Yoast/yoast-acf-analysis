@@ -58,20 +58,20 @@
 		]
 	},
 	"autoload-dev": {
-		"classmap": [
-			"config/"
-		],
 		"psr-4": {
 			"Yoast\\WP\\ACF\\Tests\\": "tests/"
 		},
+		"classmap": [
+			"config/"
+		],
 		"files": [
 			"tests/js/system/data/test-data-loader-functions.php"
 		]
 	},
 	"config": {
 		"allow-plugins": {
-			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"composer/installers": true
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		},
 		"platform": {
 			"php": "7.2.5"
