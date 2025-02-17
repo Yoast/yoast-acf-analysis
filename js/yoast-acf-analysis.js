@@ -180,7 +180,7 @@ Cache.prototype.getUncached =  function( ids, store ) {
 	ids = _.uniq( ids );
 
 	return ids.filter( function( id ) {
-		var value = that.get( id, store );
+		var value = id === "" ? true : that.get( id, store );
 
 		return value === false;
 	} );
