@@ -55,6 +55,22 @@ Previously called Yoast ACF Analysis.
 
 == Changelog ==
 
+= 3.2 =
+
+Released March 4th, 2025
+
+Bugfixes:
+
+* Fixes a bug where browser performance was degraded by useless AJAX calls with an image or gallery field. Props to [mmorris8](https://github.com/mmorris8).
+
+Other:
+
+* Sets the minimum required Yoast SEO version to 24.6.
+* Sets the minimum supported WordPress version to 6.6.
+* Improves discoverability of security policy
+* The plugin has no known incompatibilities with PHP 8.3.
+* Users requiring this package via [WP]Packagist can now use the `composer/installers` v2.
+
 = 3.1 =
 
 Released May 23rd, 2023
