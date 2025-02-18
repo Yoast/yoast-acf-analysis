@@ -31,7 +31,7 @@ final class Dependency_Yoast_SEO_Test extends TestCase {
 	 * @return void
 	 */
 	public function testPass() {
-		\define( 'WPSEO_VERSION', '20.8' );
+		\define( 'WPSEO_VERSION', '24.6' );
 
 		$testee = new Yoast_ACF_Analysis_Dependency_Yoast_SEO();
 		$this->assertTrue( $testee->is_met() );
@@ -43,7 +43,7 @@ final class Dependency_Yoast_SEO_Test extends TestCase {
 	 * @return void
 	 */
 	public function testOldVersion() {
-		\define( 'WPSEO_VERSION', '20.7' );
+		\define( 'WPSEO_VERSION', '24.5' );
 
 		$testee = new Yoast_ACF_Analysis_Dependency_Yoast_SEO();
 		$this->assertFalse( $testee->is_met() );
@@ -67,7 +67,7 @@ final class Dependency_Yoast_SEO_Test extends TestCase {
 	 * @return void
 	 */
 	public function testAdminNoticeMinimumVersion() {
-		\define( 'WPSEO_VERSION', '2.0.0' );
+		\define( 'WPSEO_VERSION', '24.5' );
 
 		$testee = new Yoast_ACF_Analysis_Dependency_Yoast_SEO();
 		$testee->register_notifications();
