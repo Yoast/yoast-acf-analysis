@@ -35,7 +35,7 @@
     "browserify": "^15.0.0",
     "chromedriver": "^2.38.3",
     "eslint-browserify": "^1.4.4",
-    "eslint-config-yoast": "^3.0.0",
+    "eslint-config-yoast": "^5.0.0",
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-yoast": "^1.0.1",
     "grunt": "^1.0.1",
