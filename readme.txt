@@ -2,7 +2,7 @@
 Contributors: yoast, angrycreative, kraftner, marcusforsberg, viktorfroberg, joostdevalk, atimmer, jipmoors, theorboman
 Tags: Yoast, SEO, ACF, Advanced Custom Fields, analysis, Search Engine Optimization
 Requires at least: 6.6
-Tested up to: 6.7
+Tested up to: 6.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Stable tag: 3.2
