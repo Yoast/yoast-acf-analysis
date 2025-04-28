@@ -15,7 +15,7 @@
  * Text Domain: acf-content-analysis-for-yoast-seo
  * Domain Path: /languages/
  * Requires at least: 6.6
- * Requires PHP: 7.2.5
+ * Requires PHP: 7.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
