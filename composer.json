@@ -43,7 +43,7 @@
 		"security": "https://yoast.com/security-program/"
 	},
 	"require": {
-		"php": "^7.2.5 || ^8.0",
+		"php": "^7.4 || ^8.0",
 		"composer/installers": "^1.12.0 || ^2.0"
 	},
 	"require-dev": {
@@ -74,7 +74,7 @@
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		},
 		"platform": {
-			"php": "7.2.5"
+			"php": "7.4"
 		}
 	},
 	"scripts": {

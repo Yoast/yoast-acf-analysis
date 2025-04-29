@@ -49,7 +49,7 @@ jobs:
 
         # Run code coverage only on high/low PHP.
         include:
-        - php_version: 7.2
+        - php_version: 7.4
           coverage: true
         - php_version: 8.4
           coverage: true
