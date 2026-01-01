@@ -36,7 +36,9 @@ jobs:
       matrix:
         # Lint against the highest/lowest supported versions of each PHP major.
         # And also do a run against "nightly" (the current dev version of PHP).
-        php_version: ['7.4', '8.0', '8.4', 'nightly']
+        php_version: ['7.4', '8.0', '8.5', 'nightly']
+
+    continue-on-error: ${{ matrix.php_version == 'nightly' }}
 
     name: "Lint: PHP ${{ matrix.php_version }}"
 
