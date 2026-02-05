@@ -120,7 +120,7 @@ class Actions {
 		$command    = \sprintf(
 			'composer check-cs-warnings -- %s %s',
 			\implode( ' ', \array_map( 'escapeshellarg', $php_files ) ),
-			$extra_args
+			$extra_args,
 		);
 		\system( $command, $exit_code );
 
@@ -196,7 +196,7 @@ class Actions {
 			$files,
 			static function ( $file ) use ( $extension ) {
 				return \substr( $file, ( 0 - \strlen( $extension ) ) ) === $extension;
-			}
+			},
 		);
 	}
 }

@@ -60,7 +60,7 @@ class AC_Yoast_SEO_ACF_Content_Analysis {
 		$configuration = new Yoast_ACF_Analysis_Configuration(
 			$this->get_blacklist_type(),
 			$this->get_blacklist_name(),
-			$this->get_field_selectors()
+			$this->get_field_selectors(),
 		);
 
 		/**
@@ -80,7 +80,7 @@ class AC_Yoast_SEO_ACF_Content_Analysis {
 			'yoast-acf-analysis/config',
 			[ $configuration ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\config'
+			'Yoast\WP\ACF\config',
 		);
 
 		/**
@@ -112,7 +112,7 @@ class AC_Yoast_SEO_ACF_Content_Analysis {
 	protected function register_config_filters() {
 		add_filter(
 			'Yoast\WP\ACF\scraper_config',
-			[ $this, 'filter_scraper_config' ]
+			[ $this, 'filter_scraper_config' ],
 		);
 	}
 
@@ -139,7 +139,7 @@ class AC_Yoast_SEO_ACF_Content_Analysis {
 			'yoast-acf-analysis/headlines',
 			[ [] ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\headlines'
+			'Yoast\WP\ACF\headlines',
 		);
 
 		/**

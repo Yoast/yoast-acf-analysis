@@ -29,7 +29,7 @@ final class Assets_Test extends TestCase {
 			->andReturn(
 				[
 					'Version' => '2.0.0',
-				]
+				],
 			);
 
 		$testee = new Yoast_ACF_Analysis_Assets();

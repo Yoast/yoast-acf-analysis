@@ -34,8 +34,8 @@ final class Registry_Test extends TestCase {
 			new Yoast_ACF_Analysis_Configuration(
 				new Yoast_ACF_Analysis_String_Store(),
 				new Yoast_ACF_Analysis_String_Store(),
-				new Yoast_ACF_Analysis_String_Store()
-			)
+				new Yoast_ACF_Analysis_String_Store(),
+			),
 		);
 
 		$this->assertSame( $first, $second );

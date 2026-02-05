@@ -50,7 +50,7 @@ class Yoast_ACF_Analysis_Assets {
 				plugins_url( '/js/yoast-acf-analysis.js', AC_SEO_ACF_ANALYSIS_PLUGIN_FILE ),
 				[ 'jquery', 'underscore' ],
 				$this->plugin_data['Version'],
-				true
+				true,
 			);
 
 			wp_localize_script( 'yoast-acf-analysis-post', 'YoastACFAnalysisConfig', $config->to_array() );
@@ -63,7 +63,7 @@ class Yoast_ACF_Analysis_Assets {
 				plugins_url( '/js/yoast-acf-analysis.js', AC_SEO_ACF_ANALYSIS_PLUGIN_FILE ),
 				[ 'jquery', WPSEO_Admin_Asset_Manager::PREFIX . 'term-edit' ],
 				$this->plugin_data['Version'],
-				true
+				true,
 			);
 
 			wp_localize_script( 'yoast-acf-analysis-term', 'YoastACFAnalysisConfig', $config->to_array() );
