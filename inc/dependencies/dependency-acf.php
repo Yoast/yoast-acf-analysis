@@ -50,7 +50,7 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 				. sprintf(
 					/* translators: %1$s: Advanced Custom Fields */
 					esc_html__( 'Install latest %1$s', 'acf-content-analysis-for-yoast-seo' ),
-					'Advanced Custom Fields'
+					'Advanced Custom Fields',
 				)
 				. '</h4>'
 				. '<div class="notice-yoast-content">'
@@ -59,12 +59,12 @@ final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Depe
 						/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Advanced Custom Fields, %3$s resolves to the minimum required ACF version. */
 						esc_html__(
 							'%1$s requires %2$s (free or pro) %3$s or higher to be installed and activated.',
-							'acf-content-analysis-for-yoast-seo'
+							'acf-content-analysis-for-yoast-seo',
 						),
 						'ACF Content Analysis for Yoast SEO',
 						'Advanced Custom Fields',
 						// phpcs:ignore WordPress.Security.EscapeOutput -- Reason: This is a hardcoded value.
-						self::MINIMAL_REQUIRED_ACF_VERSION
+						self::MINIMAL_REQUIRED_ACF_VERSION,
 					)
 					. '</p>'
 				. '</div>'

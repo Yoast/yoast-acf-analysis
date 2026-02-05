@@ -97,7 +97,7 @@ class Yoast_ACF_Analysis_Configuration {
 			'yoast-acf-analysis/blacklist_type',
 			[ $this->blacklist_type ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\blacklist_type'
+			'Yoast\WP\ACF\blacklist_type',
 		);
 
 		/**
@@ -112,7 +112,7 @@ class Yoast_ACF_Analysis_Configuration {
 		 */
 		$blacklist_type = apply_filters(
 			'Yoast\WP\ACF\blacklist_type',
-			$blacklist_type
+			$blacklist_type,
 		);
 
 		if ( $blacklist_type instanceof Yoast_ACF_Analysis_String_Store ) {
@@ -141,7 +141,7 @@ class Yoast_ACF_Analysis_Configuration {
 			'ysacf_exclude_fields',
 			[ [] ],
 			'YoastSEO ACF 2.0.0',
-			'Yoast\WP\ACF\blacklist_name'
+			'Yoast\WP\ACF\blacklist_name',
 		);
 
 		if ( is_array( $legacy_names ) && ! empty( $legacy_names ) ) {
@@ -162,7 +162,7 @@ class Yoast_ACF_Analysis_Configuration {
 			'yoast-acf-analysis/blacklist_name',
 			[ $this->blacklist_name ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\blacklist_name'
+			'Yoast\WP\ACF\blacklist_name',
 		);
 
 		/**
@@ -176,7 +176,7 @@ class Yoast_ACF_Analysis_Configuration {
 		 */
 		$blacklist_name = apply_filters(
 			'Yoast\WP\ACF\blacklist_name',
-			$blacklist_name
+			$blacklist_name,
 		);
 
 		if ( $blacklist_name instanceof Yoast_ACF_Analysis_String_Store ) {
@@ -213,7 +213,7 @@ class Yoast_ACF_Analysis_Configuration {
 			'yoast-acf-analysis/scraper_config',
 			[ $this->scraper_config ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\scraper_config'
+			'Yoast\WP\ACF\scraper_config',
 		);
 
 		/**
@@ -228,7 +228,7 @@ class Yoast_ACF_Analysis_Configuration {
 		 */
 		$scraper_config = apply_filters(
 			'Yoast\WP\ACF\scraper_config',
-			$scraper_config
+			$scraper_config,
 		);
 
 		if ( is_array( $scraper_config ) ) {
@@ -256,7 +256,7 @@ class Yoast_ACF_Analysis_Configuration {
 			'yoast-acf-analysis/refresh_rate',
 			[ $this->refresh_rate ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\refresh_rate'
+			'Yoast\WP\ACF\refresh_rate',
 		);
 
 		/**
@@ -295,7 +295,7 @@ class Yoast_ACF_Analysis_Configuration {
 			'yoast-acf-analysis/field_selectors',
 			[ $this->field_selectors ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\field_selectors'
+			'Yoast\WP\ACF\field_selectors',
 		);
 
 		/**
@@ -314,7 +314,7 @@ class Yoast_ACF_Analysis_Configuration {
 		 */
 		$field_selectors = apply_filters(
 			'Yoast\WP\ACF\field_selectors',
-			$field_selectors
+			$field_selectors,
 		);
 
 		if ( $field_selectors instanceof Yoast_ACF_Analysis_String_Store ) {
@@ -345,7 +345,7 @@ class Yoast_ACF_Analysis_Configuration {
 			'yoast-acf-analysis/field_order',
 			[ [] ],
 			'YoastSEO ACF 2.4.0',
-			'Yoast\WP\ACF\field_order'
+			'Yoast\WP\ACF\field_order',
 		);
 
 		/**

@@ -57,7 +57,7 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 				. sprintf(
 					/* translators: %1$s: Yoast SEO */
 					esc_html__( 'Install %1$s', 'acf-content-analysis-for-yoast-seo' ),
-					'Yoast SEO'
+					'Yoast SEO',
 				)
 				. '</h4>'
 				. '<div class="notice-yoast-content">'
@@ -66,10 +66,10 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 						/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO, %2$s resolves to Yoast SEO. */
 						esc_html__(
 							'%1$s requires %2$s to be installed and activated.',
-							'acf-content-analysis-for-yoast-seo'
+							'acf-content-analysis-for-yoast-seo',
 						),
 						'ACF Content Analysis for Yoast SEO',
-						'Yoast SEO'
+						'Yoast SEO',
 					)
 					. '</p>'
 				. '</div>'
@@ -89,7 +89,7 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 				. sprintf(
 					/* translators: %1$s: Yoast SEO */
 					esc_html__( 'Update %1$s', 'acf-content-analysis-for-yoast-seo' ),
-					'Yoast SEO'
+					'Yoast SEO',
 				)
 				. '</h4>'
 				. '<div class="notice-yoast-content">'
@@ -98,10 +98,10 @@ final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysi
 						/* translators: %1$s resolves to Yoast SEO, %2$s resolves to ACF Content Analysis for Yoast SEO */
 						esc_html__(
 							'Please upgrade the %1$s plugin to the latest version to allow the %2$s module to work.',
-							'acf-content-analysis-for-yoast-seo'
+							'acf-content-analysis-for-yoast-seo',
 						),
 						'Yoast SEO',
-						'ACF Content Analysis for Yoast SEO'
+						'ACF Content Analysis for Yoast SEO',
 					)
 					. '</p>'
 				. '</div>'

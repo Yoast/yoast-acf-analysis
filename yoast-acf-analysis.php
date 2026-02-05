@@ -59,7 +59,7 @@ function yoast_acf_report_missing_acf() {
 			. sprintf(
 				/* translators: %1$s: ACF Content Analysis for Yoast SEO */
 				esc_html__( 'Unable to load %1$s', 'acf-content-analysis-for-yoast-seo' ),
-				'ACF Content Analysis for Yoast SEO'
+				'ACF Content Analysis for Yoast SEO',
 			)
 			. '</h4>'
 			. '<div class="notice-yoast-content">'
@@ -68,9 +68,9 @@ function yoast_acf_report_missing_acf() {
 					/* translators: %1$s resolves to ACF Content Analysis for Yoast SEO */
 					esc_html__(
 						'%1$s could not be loaded because of missing files.',
-						'acf-content-analysis-for-yoast-seo'
+						'acf-content-analysis-for-yoast-seo',
 					),
-					'ACF Content Analysis for Yoast SEO'
+					'ACF Content Analysis for Yoast SEO',
 				)
 				. '</p>'
 			. '</div>'
