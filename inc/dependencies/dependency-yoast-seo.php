@@ -10,6 +10,11 @@
  */
 final class Yoast_ACF_Analysis_Dependency_Yoast_SEO implements Yoast_ACF_Analysis_Dependency {
 
+	/**
+	 * Minimum supported version of the YoastSEO plugin.
+	 *
+	 * @var string
+	 */
 	public const MINIMAL_REQUIRED_VERSION = '24.6-RC1';
 
 	/**
