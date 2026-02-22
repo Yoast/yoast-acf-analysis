@@ -10,6 +10,11 @@
  */
 final class Yoast_ACF_Analysis_Dependency_ACF implements Yoast_ACF_Analysis_Dependency {
 
+	/**
+	 * Minimum supported version of the ACF plugin.
+	 *
+	 * @var string
+	 */
 	public const MINIMAL_REQUIRED_ACF_VERSION = '6.0.0';
 
 	/**
