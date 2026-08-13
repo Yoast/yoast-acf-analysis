@@ -2,7 +2,12 @@
 var cache = require( "./cache.js" );
 
 var refresh = function( attachment_ids ) {
-	var uncached = cache.getUncached( attachment_ids, "attachment" );
+
+	attachment_ids = attachment_ids.filter( function (id) {
+		return id !== "" && typeof id !== "undefined"
+  });
+
+  var uncached = cache.getUncached( attachment_ids, "attachment" );
 
 	if ( uncached.length === 0 ) {
 		return;
