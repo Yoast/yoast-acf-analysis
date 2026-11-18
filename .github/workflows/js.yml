@@ -65,7 +65,7 @@ jobs:
           npm --version
           node --version
           yarn --version
-          grunt --version
+          yarn grunt --version
 
       - name: Run Grunt tasks
-        run: grunt check
+        run: yarn grunt check
